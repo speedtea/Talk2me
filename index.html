@@ -1,168 +1,186 @@
-spanDDOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talk2<meta name="title" content="IQBAL Minimalist Portfolio">
-<meta name="description" content="Digital Creator & Designer yang berfokus pada estetika modern, minimalisme, dan pengalaman digital yang bersih.">
-
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://speedtea.github.io/Talk2me/">
-<meta property="og:title" content="IQBAL| Minimalist Portfolio">
-<meta property="og:description" content="Eksplorasi karya kreatif dan desain minimalis oleh ATAN.">
-<meta property="og:image" content="https://speedtea.github.io/Talk2me/preview.jpg">
-
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://speedtea.github.io/Talk2me/">
-<meta property="twitter:title" content="IQBAL | Minimalist Portfolio">
-<meta property="twitter:description" content="Eksplorasi karya kreatif dan desain minimalis oleh ATAN.">
-<meta property="twitter:image" content="https://speedtea.github.io/Talk2me/preview.jpg">
-
-<link rel="icon" type="image/x-icon" href="https://speedtea.github.io/Talk2me/favicon.ico">TALK2 | Minimalist Portfolio</title>
+    <title>PORTFOLIO | Craft & Design Style</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>A</text></svg>">
+    
     <script>
-        tailwind.config = { darkMode: 'class' }
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'bucini-dark': '#3a2a21',
+                        'bucini-brown': '#5c4033',
+                        'bucini-accent': '#8b5e3c',
+                        'bucini-bg': '#fdfaf5',
+                    }
+                }
+            }
+        }
     </script>
+
     <style>
-       body { font-family: 'Inter', sans-serif; transition: background-color 0.4s; scroll-behavior: smooth; }
-        ::selection { background: #000; color: #fff; }
-        .dark ::selection { background: #fff; color: #000; }
-        .glass-nav { backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.8); }
-        .dark .glass-nav { background-color: rgba(9, 9, 11, 0.8); }
+        :root { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #fdfaf5; 
+            color: #3a2a21;
+            transition: background-color 0.5s ease;
+        }
+        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+        
+        /* Custom Selection */
+        ::selection { background: #5c4033; color: #fff; }
 
-        /* Warna saat teks diblok/sorot */
-::selection {
-    background-color: #000000;
-    color: #ffffff;
-}
+        /* Navbar Blur Effect */
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            background-color: rgba(253, 250, 245, 0.8);
+        }
 
-/* Warna saat teks diblok pada Dark Mode */
-.dark ::selection {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-/* Memperhalus transisi hover pada link navigasi */
-nav a {
-    transition: all 0.3s ease;
-}
-
-nav a:hover {
-    opacity: 0.6;
-    letter-spacing: 0.1em;
-}
-        /* Custom Cursor Style */
-#cursor {
-    width: 20px;
-    height: 20px;
-    border: 1px solid currentColor;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.1s ease, background 0.3s ease;
-}
-@media (max-width: 768px) { #cursor { display: none; } } /* Sembunyikan di HP */
+        /* Dark Mode Adjustments */
+        .dark body { background-color: #1a1410; color: #fdfaf5; }
+        .dark .glass-nav { background-color: rgba(26, 20, 16, 0.8); }
+        .dark ::selection { background: #fdfaf5; color: #1a1410; }
     </style>
 </head>
-<body class="bg-white text-black dark:bg-zinc-950 dark:text-white antialiased overflow-x-hidden">
+<body class="antialiased">
 
-    <nav class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto sticky top-0 z-50 glass-nav">
-        <div class="text-xl font-bold tracking-tighter italic">ATAN.</div>
-        <div class="flex items-center space-x-8">
-            <div class="hidden md:flex space-x-8 text-[10px] uppercase tracking-[0.3em] font-medium">
-                <a href="#home" class="hover:line-through transition-all">Home</a>
-                <a href="#works" class="hover:line-through transition-all">Works</a>
-            </div>
-            <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors">
+    <nav class="flex justify-between items-center px-6 md:px-12 py-6 sticky top-0 z-50 glass-nav border-b border-black/5">
+        <div class="text-2xl font-bold tracking-[0.2em] text-bucini-brown dark:text-bucini-accent uppercase serif">ATAN.</div>
+        
+        <div class="hidden md:flex space-x-10 text-[11px] uppercase tracking-[0.2em] font-semibold text-gray-600 dark:text-gray-400">
+            <a href="#home" class="hover:text-bucini-brown transition-colors">Beranda</a>
+            <a href="#works" class="hover:text-bucini-brown transition-colors">Koleksi</a>
+            <a href="#about" class="hover:text-bucini-brown transition-colors">Tentang</a>
+        </div>
+
+        <div class="flex items-center space-x-6">
+            <button id="theme-toggle" class="text-bucini-brown dark:text-bucini-accent">
                 <i id="theme-icon" data-lucide="moon" class="w-5 h-5"></i>
             </button>
+            <a href="#" class="hidden md:block bg-bucini-brown text-white text-[10px] px-6 py-3 rounded-sm uppercase tracking-widest hover:bg-bucini-dark transition-all">
+                Hubungi Kami
+            </a>
         </div>
     </nav>
 
-    <main id="home" class="max-w-7xl mx-auto px-8 pt-20 pb-32">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            
-            <div class="order-2 md:order-1" data-aos="fade-right" data-aos-duration="1000">
-                <p class="text-[10px] uppercase tracking-[0.4em] mb-6 text-gray-400 dark:text-zinc-500">Digital Creator & Designer</p>
-                <h1 class="text-6xl md:text-8xl font-bold leading-[0.9] mb-10 tracking-tighter">
-                    CREATING <br> <span class="text-gray-200 dark:text-zinc-800">PEJUANG</span> RUPIAH.
-                </h1>
-                <p class="max-w-sm text-gray-600 dark:text-zinc-400 leading-relaxed mb-12 text-sm font-light">
-                    Membangun pengalaman digital yang bersih, minimalis, dan berfokus pada estetika modern.
-                </p>
-                <a href="mailto:hello@example.com" class="inline-block border-b border-black dark:border-white pb-2 font-bold text-xs tracking-widest hover:opacity-50 transition-all">
-                    GET IN TOUCH
-                </a>
-            </div>
-
-            <div class="order-1 md:order-2" data-aos="zoom-in-up" data-aos-duration="1200">
-                <div class="relative group">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-gray-200 to-gray-100 dark:from-zinc-800 dark:to-zinc-900 rounded-2xl blur opacity-20"></div>
-                    <div class="relative bg-gray-100 dark:bg-zinc-900 aspect-[4/5] rounded-xl overflow-hidden shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000" 
-                             alt="Hero" class="w-full h-full object-cover grayscale brightness-90 group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                </div>
+    <section id="home" class="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div data-aos="fade-right" data-aos-duration="1000">
+            <span class="text-xs uppercase tracking-[0.4em] text-bucini-accent font-bold mb-6 block">Premium Craftsmanship</span>
+            <h1 class="text-5xl md:text-7xl leading-[1.1] mb-8 text-bucini-dark dark:text-bucini-bg">Kualitas Abadi, <br><i class="serif font-normal">Sentuhan Personal.</i></h1>
+            <p class="text-gray-600 dark:text-gray-400 mb-10 max-w-md leading-relaxed text-sm md:text-base">
+                Dibuat dengan ketelitian tinggi menggunakan material pilihan untuk menciptakan karya yang tidak hanya indah dipandang, tapi juga bermakna.
+            </p>
+            <div class="flex items-center space-x-8">
+                <a href="#works" class="bg-bucini-brown text-white px-8 py-4 rounded-sm text-xs uppercase tracking-widest hover:shadow-2xl transition-all">Eksplorasi</a>
+                <a href="#" class="text-bucini-brown dark:text-bucini-accent font-bold text-xs tracking-widest border-b border-bucini-brown pb-1">Cerita Kami</a>
             </div>
         </div>
-    </main>
 
-    <section id="works" class="max-w-7xl mx-auto px-8 py-20 border-t border-gray-100 dark:border-zinc-900">
-        <div class="flex justify-between items-end mb-12" data-aos="fade-up">
-            <h2 class="text-3xl font-bold tracking-tighter uppercase">Selected Works</h2>
-            <span class="text-[10px] text-gray-400 tracking-[0.3em]">2024 — 2026</span>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
-                <div class="bg-gray-100 dark:bg-zinc-900 aspect-video rounded-xl overflow-hidden mb-6">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000" 
-                         class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110">
-                </div>
-                <h3 class="text-sm font-bold uppercase tracking-widest">Project Name — 01</h3>
-                <p class="text-xs text-gray-500 mt-1 italic font-light">Interaction Design / Development</p>
+        <div class="relative" data-aos="zoom-in" data-aos-duration="1200">
+            <div class="aspect-[4/5] rounded-t-[120px] rounded-b-lg overflow-hidden shadow-2xl border-[12px] border-white dark:border-zinc-900">
+                <img src="https://images.unsplash.com/photo-1547949003-9792a18a2601?q=80&w=1000" class="w-full h-full object-cover">
             </div>
-
-            <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="300">
-                <div class="bg-gray-100 dark:bg-zinc-900 aspect-video rounded-xl overflow-hidden mb-6">
-                    <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1000" 
-                         class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110">
-                </div>
-                <h3 class="text-sm font-bold uppercase tracking-widest">Digital Identity — 02</h3>
-                <p class="text-xs text-gray-500 mt-1 italic font-light">Branding / Typography</p>
+            <div class="absolute -bottom-6 -right-6 bg-bucini-accent text-white p-8 rounded-full w-32 h-32 flex flex-col items-center justify-center text-center shadow-xl animate-pulse">
+                <span class="text-[8px] uppercase tracking-tighter">Handmade</span>
+                <span class="serif italic text-xl">100%</span>
+                <span class="text-[8px] uppercase tracking-tighter">Leather</span>
             </div>
         </div>
     </section>
 
-    <footer class="px-8 py-20 border-t border-gray-100 dark:border-zinc-900 max-w-7xl mx-auto text-center">
-        <div class="flex justify-center space-x-8 mb-8" data-aos="fade-up">
-            <a href="#" class="text-gray-400 hover:text-black dark:hover:text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-            <a href="#" class="text-gray-400 hover:text-black dark:hover:text-white transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+    <section id="works" class="bg-[#f7f1e9] dark:bg-[#15100d] py-24 px-6 md:px-12 transition-colors">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl text-bucini-dark dark:text-bucini-bg mb-4">Koleksi Terpilih</h2>
+                <div class="w-24 h-1 bg-bucini-accent mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="overflow-hidden rounded-2xl mb-6 bg-white dark:bg-zinc-900 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=1000" class="w-full h-[400px] object-cover group-hover:scale-110 transition duration-1000 grayscale group-hover:grayscale-0">
+                    </div>
+                    <p class="text-[10px] uppercase tracking-widest text-bucini-accent mb-2">Tas Bahu</p>
+                    <h3 class="text-2xl text-bucini-dark dark:text-bucini-bg mb-2">Classic Chestnut Bag</h3>
+                    <p class="text-bucini-brown dark:text-bucini-accent font-semibold tracking-tighter">IDR 1.450.000</p>
+                </div>
+
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="overflow-hidden rounded-2xl mb-6 bg-white dark:bg-zinc-900 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=1000" class="w-full h-[400px] object-cover group-hover:scale-110 transition duration-1000 grayscale group-hover:grayscale-0">
+                    </div>
+                    <p class="text-[10px] uppercase tracking-widest text-bucini-accent mb-2">Aksesoris</p>
+                    <h3 class="text-2xl text-bucini-dark dark:text-bucini-bg mb-2">Vintage Billfold Wallet</h3>
+                    <p class="text-bucini-brown dark:text-bucini-accent font-semibold tracking-tighter">IDR 580.000</p>
+                </div>
+
+                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="overflow-hidden rounded-2xl mb-6 bg-white dark:bg-zinc-900 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1530173336844-31533318079a?q=80&w=1000" class="w-full h-[400px] object-cover group-hover:scale-110 transition duration-1000 grayscale group-hover:grayscale-0">
+                    </div>
+                    <p class="text-[10px] uppercase tracking-widest text-bucini-accent mb-2">Keperluan Kantor</p>
+                    <h3 class="text-2xl text-bucini-dark dark:text-bucini-bg mb-2">Minimalist Journal Cover</h3>
+                    <p class="text-bucini-brown dark:text-bucini-accent font-semibold tracking-tighter">IDR 320.000</p>
+                </div>
+            </div>
         </div>
-        <p class="text-[9px] tracking-[0.5em] text-gray-400 uppercase font-medium">© 2026 ATANRBX — ALL RIGHTS RESERVED</p>
+    </section>
+
+    <footer class="py-20 px-6 md:px-12 border-t border-gray-200 dark:border-zinc-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-2">
+                <div class="text-3xl font-bold tracking-widest text-bucini-brown mb-6 serif">ATAN.</div>
+                <p class="text-gray-500 text-sm max-w-sm leading-loose">
+                    Menghubungkan tradisi kerajinan tangan lokal dengan estetika desain modern. Setiap produk memiliki cerita uniknya sendiri.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase text-[10px] tracking-widest text-bucini-accent">Bantuan</h4>
+                <ul class="text-gray-500 space-y-4 text-xs">
+                    <li><a href="#" class="hover:text-bucini-brown transition-colors">Cara Pemesanan</a></li>
+                    <li><a href="#" class="hover:text-bucini-brown transition-colors">Kebijakan Pengembalian</a></li>
+                    <li><a href="#" class="hover:text-bucini-brown transition-colors">Perawatan Produk</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase text-[10px] tracking-widest text-bucini-accent">Media Sosial</h4>
+                <div class="flex space-x-6 text-gray-400">
+                    <a href="#" class="hover:text-bucini-brown"><i data-lucide="instagram"></i></a>
+                    <a href="#" class="hover:text-bucini-brown"><i data-lucide="twitter"></i></a>
+                    <a href="#" class="hover:text-bucini-brown"><i data-lucide="facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-20 pt-10 border-t border-gray-100 dark:border-zinc-900 text-center">
+            <p class="text-[10px] text-gray-400 uppercase tracking-[0.4em]">© 2026 ATAN — Indonesian Artisanal Heritage</p>
+        </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // AOS Animation
-        AOS.init({ once: true, offset: 100 });
-
-        // Lucide Icons
+        // AOS Initialize
+        AOS.init({ once: true });
+        
+        // Lucide Icons Initialize
         lucide.createIcons();
 
-        // Dark Mode Toggle
+        // Dark Mode Logic
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const htmlElement = document.documentElement;
 
-        // Check Local Storage
-        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        if (localStorage.getItem('theme') === 'dark') {
             htmlElement.classList.add('dark');
             themeIcon.setAttribute('data-lucide', 'sun');
             lucide.createIcons();
@@ -176,19 +194,5 @@ nav a:hover {
             lucide.createIcons();
         });
     </script>
-
-    <div id="cursor"></div>
-<script>
-    const cursor = document.getElementById('cursor');
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX - 10 + 'px';
-        cursor.style.top = e.clientY - 10 + 'px';
-    });
-    // Efek membesar saat hover link
-    document.querySelectorAll('a, button').forEach(link => {
-        link.addEventListener('mouseenter', () => cursor.style.transform = 'scale(2.5)');
-        link.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
-    });
-</script>
 </body>
-        </html>
+    </html>
