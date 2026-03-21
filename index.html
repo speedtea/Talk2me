@@ -142,4 +142,44 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        lucide.createIcons();
+
+        // Swiper Slider Logic
+        new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: { el: ".swiper-pagination", clickable: true },
+            breakpoints: {
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+            }
+        });
+
+        // Cart Drawer Toggle
+        function toggleCart() {
+            const body = document.body;
+            const overlay = document.getElementById('cart-overlay');
+            if(body.classList.contains('cart-closed')) {
+                body.classList.replace('cart-closed', 'cart-open');
+                overlay.classList.remove('hidden');
+            } else {
+                body.classList.replace('cart-open', 'cart-closed');
+                overlay.classList.add('hidden');
+            }
+        }
+
+        // Dark Mode
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            themeIcon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
