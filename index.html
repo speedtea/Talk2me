@@ -106,4 +106,91 @@
         </div>
     </div>
 
-    <footer class="py-20 bg-white dark:bg-[#0a07
+    <footer class="py-20 bg-white dark:bg-[#0a0706] text-center border-t border-black/5 dark:border-white/5">
+        <div class="brand-logo text-3xl mb-10 text-iql-brown dark:text-[#f8f1ed]">IQL</div>
+        <p class="text-[10px] text-gray-400 uppercase tracking-[0.5em]">© 2026 IQL Indonesia</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // DATA PRODUK
+        const products = [
+            { name: "Oxford Tote", price: "1.250.000", img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=800", desc: "Tas kulit sapi pull-up premium dengan jahitan tangan yang sangat detail." },
+            { name: "Slim Wallet", price: "450.000", img: "https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=800", desc: "Desain minimalis untuk gaya hidup modern. Muat 6-8 kartu." },
+            { name: "Classic Belt", price: "350.000", img: "https://images.unsplash.com/photo-1530173336844-31533318079a?q=80&w=800", desc: "Sabuk kulit asli yang semakin lama digunakan semakin terlihat mewah." },
+            { name: "Travel Case", price: "750.000", img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800", desc: "Tempat penyimpanan barang berharga untuk perjalanan jauh Anda." }
+        ];
+
+        document.getElementById('product-list').innerHTML = products.map(p => `
+            <div class="swiper-slide px-3">
+                <div class="group bg-white dark:bg-[#1a1412] rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-700">
+                    <div class="relative aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('${p.name}', '${p.price}', '${p.img}', '${p.desc}')">
+                        <img src="${p.img}" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-white text-[10px] border border-white px-4 py-2 uppercase tracking-widest">Detail</span>
+                        </div>
+                    </div>
+                    <div class="p-8 text-center">
+                        <h3 class="serif text-xl mb-2">${p.name}</h3>
+                        <p class="text-iql-accent dark:text-[#d4af37] font-bold text-sm">IDR ${p.price}</p>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+
+        // DATA TESTIMONI
+        const reviews = [
+            { name: "Andini", text: "Kualitas kulit IQL benar-benar beda, terasa sangat solid dan premium." },
+            { name: "Budi", text: "Pelayanan sangat ramah dan pengiriman sangat cepat ke Jakarta." }
+        ];
+        document.getElementById('testimonial-list').innerHTML = reviews.map(r => `
+            <div class="swiper-slide text-center">
+                <p class="text-xl serif italic mb-6">"${r.text}"</p>
+                <span class="text-[10px] uppercase tracking-widest opacity-60">${r.name}</span>
+            </div>
+        `).join('');
+
+        // MODAL LOGIC
+        const modal = document.getElementById('product-modal');
+        function openModal(name, price, img, desc) {
+            document.getElementById('modal-title').innerText = name;
+            document.getElementById('modal-price').innerText = 'IDR ' + price;
+            document.getElementById('modal-img').src = img;
+            document.getElementById('modal-desc').innerText = desc;
+            document.getElementById('modal-wa-link').href = `https://wa.me/6281234567890?text=Halo+IQL+saya+ingin+tanya+produk+${name}`;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        // THEME TOGGLE
+        const themeBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        function updateIcons() {
+            if (document.documentElement.classList.contains('dark')) {
+                lightIcon.classList.remove('hidden'); darkIcon.classList.add('hidden');
+            } else {
+                darkIcon.classList.remove('hidden'); lightIcon.classList.add('hidden');
+            }
+        }
+        updateIcons();
+        themeBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('color-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+            updateIcons();
+        });
+
+        // SWIPER INIT
+        new Swiper(".productSwiper", { slidesPerView: 1.2, spaceBetween: 20, breakpoints: { 1024: { slidesPerView: 3.5 } } });
+        new Swiper(".testimonialSwiper", { pagination: { el: ".swiper-pagination" }, autoplay: { delay: 4000 } });
+    </script>
+</body>
+                                                                                         </html>
