@@ -11,8 +11,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <script>
-        // Cek Tema Saat Load
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark').matches)) {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
@@ -36,14 +35,12 @@
         :root { scroll-behavior: smooth; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; transition: background-color 0.4s, color 0.4s; }
         .serif { font-family: 'Playfair Display', serif; }
-        .brand-logo { font-family: 'Playfair Display', serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5em; position: relative; display: inline-block; }
+        .brand-logo { font-family: 'Playfair Display', serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5em; position: relative; }
         
-        /* Modal Transition */
         #product-modal { transition: opacity 0.3s ease; }
         #product-modal.hidden { opacity: 0; pointer-events: none; display: none; }
-        #product-modal.flex { opacity: 1; pointer-events: auto; }
-
-        .swiper-pagination-bullet-active { background: #3a2a21 !important; }
+        
+        .swiper-pagination-bullet-active { background: #fff !important; }
         .dark .swiper-pagination-bullet-active { background: #f8f1ed !important; }
     </style>
 </head>
@@ -60,23 +57,45 @@
         </div>
     </nav>
 
-    <header id="home" class="relative w-full h-[60vh] md:h-[80vh]">
-        <img src="https://images.unsplash.com/photo-1473187983305-f615310e7daa?q=80&w=2000" class="w-full h-full object-cover dark:brightness-50">
-        <div class="absolute inset-0 bg-black/20 flex flex-col items-center justify-center text-center text-white p-6">
-            <h1 class="text-6xl md:text-9xl serif mb-8 italic">The Heritage</h1>
-            <a href="#koleksi" class="bg-white text-black px-12 py-4 text-[10px] font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all">Explore Shop</a>
+    <header id="home" class="relative w-full h-[65vh] md:h-[85vh]">
+        <div class="swiper heroSwiper h-full w-full">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide relative">
+                    <img src="https://images.unsplash.com/photo-1473187983305-f615310e7daa?q=80&w=2000" class="w-full h-full object-cover dark:brightness-50">
+                    <div class="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-center text-white p-6">
+                        <span class="text-[10px] uppercase tracking-[0.5em] mb-4 opacity-80">Established 2026</span>
+                        <h1 class="text-5xl md:text-8xl serif mb-10 italic">The Heritage</h1>
+                        <a href="#koleksi" class="bg-white text-black px-12 py-4 text-[10px] font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all">Explore Collection</a>
+                    </div>
+                </div>
+                <div class="swiper-slide relative">
+                    <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=2000" class="w-full h-full object-cover dark:brightness-50">
+                    <div class="absolute inset-0 bg-[#3a2a21]/40 flex flex-col items-center justify-center text-center text-white p-6">
+                        <span class="text-[10px] bg-red-600 px-4 py-1 uppercase tracking-widest mb-4 font-bold">Limited Offer</span>
+                        <h2 class="text-5xl md:text-8xl serif mb-6 italic">Season Sale</h2>
+                        <p class="text-lg md:text-xl mb-10 font-light tracking-wide">Get up to 20% off on selected handcrafted goods</p>
+                        <a href="https://wa.me/6281234567890" class="bg-iql-accent text-white px-12 py-4 text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">Claim Discount</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
     </header>
 
     <section id="koleksi" class="py-24">
         <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
-            <h2 class="text-4xl serif italic mb-3">Featured Selection</h2>
+            <h2 class="text-4xl serif italic mb-3">Our Selection</h2>
             <div class="w-16 h-px bg-iql-brown dark:bg-[#f8f1ed] mx-auto opacity-20"></div>
         </div>
 
-        <div class="swiper productSwiper max-w-7xl mx-auto px-6 !pb-12">
-            <div class="swiper-wrapper" id="product-list">
-                </div>
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10" id="product-grid">
+            </div>
+
+        <div class="mt-20 text-center">
+            <button id="btn-shop-more" onclick="showMoreProducts()" class="inline-flex items-center space-x-4 border border-iql-brown dark:border-white/20 px-10 py-4 text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-iql-brown hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
+                <span>View More Products</span>
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+            </button>
         </div>
     </section>
 
@@ -84,8 +103,7 @@
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h2 class="text-3xl serif italic mb-12">Client Voices</h2>
             <div class="swiper testimonialSwiper pb-12">
-                <div class="swiper-wrapper" id="testimonial-list">
-                    </div>
+                <div class="swiper-wrapper" id="testimonial-list"></div>
                 <div class="swiper-pagination"></div>
             </div>
         </div>
@@ -117,33 +135,48 @@
     <script>
         lucide.createIcons();
 
-        // DATA PRODUK
+        // DATA 6 PRODUK
         const products = [
-            { name: "Oxford Tote", price: "1.250.000", img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=800", desc: "Tas kulit sapi pull-up premium dengan jahitan tangan yang sangat detail." },
-            { name: "Slim Wallet", price: "450.000", img: "https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=800", desc: "Desain minimalis untuk gaya hidup modern. Muat 6-8 kartu." },
-            { name: "Classic Belt", price: "350.000", img: "https://images.unsplash.com/photo-1530173336844-31533318079a?q=80&w=800", desc: "Sabuk kulit asli yang semakin lama digunakan semakin terlihat mewah." },
-            { name: "Travel Case", price: "750.000", img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800", desc: "Tempat penyimpanan barang berharga untuk perjalanan jauh Anda." }
+            { name: "Oxford Tote", price: "1.250.000", img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=800", desc: "Tas kulit sapi pull-up premium dengan jahitan tangan yang sangat detail.", hidden: false },
+            { name: "Slim Wallet", price: "450.000", img: "https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=800", desc: "Desain minimalis untuk gaya hidup modern. Muat 6-8 kartu.", hidden: false },
+            { name: "Classic Belt", price: "350.000", img: "https://images.unsplash.com/photo-1530173336844-31533318079a?q=80&w=800", desc: "Sabuk kulit asli yang semakin lama digunakan semakin terlihat mewah.", hidden: false },
+            { name: "Travel Case", price: "750.000", img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800", desc: "Tempat penyimpanan barang berharga untuk perjalanan jauh Anda.", hidden: true },
+            { name: "Card Holder", price: "150.000", img: "https://images.unsplash.com/photo-1614352232749-92c2a9c336b9?q=80&w=800", desc: "Tempat kartu ringkas untuk efisiensi maksimal harian Anda.", hidden: true },
+            { name: "Camera Strap", price: "250.000", img: "https://images.unsplash.com/photo-1516724562728-afc824a36e84?q=80&w=800", desc: "Tali kamera kulit yang kuat dan nyaman untuk fotografer profesional.", hidden: true }
         ];
 
-        const productList = document.getElementById('product-list');
-        productList.innerHTML = products.map(p => `
-            <div class="swiper-slide px-3">
-                <div class="group bg-white dark:bg-[#1a1412] rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-700">
-                    <div class="relative aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('${p.name}', '${p.price}', '${p.img}', '${p.desc}')">
-                        <img src="${p.img}" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000">
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="text-white text-[10px] border border-white px-4 py-2 uppercase tracking-widest">Detail</span>
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = products.map(p => `
+                <div class="product-item ${p.hidden ? 'hidden opacity-0' : 'opacity-100'} transition-all duration-700">
+                    <div class="group bg-white dark:bg-[#1a1412] rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-700 border border-black/5 dark:border-white/5">
+                        <div class="relative aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('${p.name}', '${p.price}', '${p.img}', '${p.desc}')">
+                            <img src="${p.img}" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                                <span class="border border-white px-4 py-2 text-[10px] uppercase tracking-widest">Detail</span>
+                            </div>
+                        </div>
+                        <div class="p-8 text-center">
+                            <h3 class="serif text-xl mb-2">${p.name}</h3>
+                            <p class="text-iql-accent dark:text-[#d4af37] font-bold text-sm">IDR ${p.price}</p>
                         </div>
                     </div>
-                    <div class="p-8 text-center">
-                        <h3 class="serif text-xl mb-2">${p.name}</h3>
-                        <p class="text-iql-accent dark:text-[#d4af37] font-bold text-sm">IDR ${p.price}</p>
-                    </div>
                 </div>
-            </div>
-        `).join('');
+            `).join('');
+        }
 
-        // DATA TESTIMONI
+        function showMoreProducts() {
+            const hiddenItems = document.querySelectorAll('.product-item.hidden');
+            hiddenItems.forEach(item => {
+                item.classList.remove('hidden');
+                setTimeout(() => item.classList.add('opacity-100'), 50);
+            });
+            document.getElementById('btn-shop-more').style.display = 'none';
+        }
+
+        renderProducts();
+
+        // TESTIMONI
         const reviews = [
             { name: "Andini", text: "Kualitas kulit IQL benar-benar beda, terasa sangat solid dan premium." },
             { name: "Budi", text: "Pelayanan sangat ramah dan pengiriman sangat cepat ke Jakarta." }
@@ -162,8 +195,7 @@
             document.getElementById('modal-price').innerText = 'IDR ' + price;
             document.getElementById('modal-img').src = img;
             document.getElementById('modal-desc').innerText = desc;
-            const waUrl = `https://wa.me/6281234567890?text=Halo+IQL+saya+ingin+tanya+produk+${name}`;
-            document.getElementById('modal-wa-link').href = waUrl;
+            document.getElementById('modal-wa-link').href = `https://wa.me/6281234567890?text=Halo+IQL+saya+ingin+tanya+produk+${name}`;
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             document.body.style.overflow = 'hidden';
@@ -178,7 +210,6 @@
         const themeBtn = document.getElementById('theme-toggle');
         const darkIcon = document.getElementById('theme-toggle-dark-icon');
         const lightIcon = document.getElementById('theme-toggle-light-icon');
-
         function updateIcons() {
             if (document.documentElement.classList.contains('dark')) {
                 lightIcon.classList.remove('hidden'); darkIcon.classList.add('hidden');
@@ -194,8 +225,8 @@
         });
 
         // SWIPER
-        new Swiper(".productSwiper", { slidesPerView: 1.2, spaceBetween: 20, breakpoints: { 1024: { slidesPerView: 3.5 } } });
-        new Swiper(".testimonialSwiper", { pagination: { el: ".swiper-pagination" }, autoplay: { delay: 3000 } });
+        new Swiper(".heroSwiper", { loop: true, autoplay: { delay: 6000 }, pagination: { el: ".swiper-pagination", clickable: true } });
+        new Swiper(".testimonialSwiper", { pagination: { el: ".swiper-pagination" }, autoplay: { delay: 4000 } });
     </script>
 </body>
-</html>
+                    </html>
