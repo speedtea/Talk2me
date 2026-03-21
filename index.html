@@ -62,7 +62,7 @@
     <div class="swiper heroSwiper h-[70vh] md:h-[85vh]">
         <div class="swiper-wrapper">
             <div class="swiper-slide relative bg-black">
-                <img src="SnapInsta.to_638871041_17955964637987794_4490245217933918172_n.jpg" 
+                <img src="iqbal.jpg" 
                      class="w-full h-full object-cover md:object-cover brightness-90">
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-6 bg-gradient-to-t from-black/80 via-transparent to-transparent">
                     <h2 class="text-5xl md:text-8xl serif italic mb-4">The Visionary</h2>
@@ -228,7 +228,6 @@
                 <p class="italic text-sm opacity-70 mb-4">"${t.text}"</p><h4 class="serif font-bold text-iql-brown dark:text-iql-gold">${t.name}</h4>
             </div></div>`).join('');
 
-        // INITIALIZE SWIPERS
         new Swiper(".heroSwiper", { loop: true, autoplay: { delay: 5000 }, pagination: { el: ".swiper-pagination", clickable: true } });
         new Swiper(".productSwiper", { slidesPerView: 1.2, spaceBetween: 20, navigation: { nextEl: ".swiper-next-main", prevEl: ".swiper-prev-main" }, breakpoints: { 1024: { slidesPerView: 3.5 } } });
         new Swiper(".accessorySwiper", { slidesPerView: 1.1, spaceBetween: 20, breakpoints: { 1024: { slidesPerView: 2.5 } } });
@@ -249,7 +248,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // THEME TOGGLE
         const themeBtn = document.getElementById('theme-toggle');
         const darkIcon = document.getElementById('theme-toggle-dark-icon');
         const lightIcon = document.getElementById('theme-toggle-light-icon');
@@ -268,4 +266,4 @@
         }
     </script>
 </body>
-    </html>
+                </html>
