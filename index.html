@@ -35,7 +35,6 @@
         #product-modal.hidden { opacity: 0; pointer-events: none; display: none; }
         #product-modal.flex { opacity: 1; pointer-events: auto; }
 
-        /* Animasi Pulse Lembut untuk Best Seller */
         @keyframes pulse-slow {
             0%, 100% { opacity: 1; transform: scale(1); }
             50% { opacity: 0.8; transform: scale(1.05); }
@@ -79,6 +78,8 @@
         <h2 class="text-3xl serif italic mb-12">Featured Collection</h2>
         <div class="swiper productSwiper !pb-12">
             <div class="swiper-wrapper" id="featured-list"></div>
+            <div class="swiper-button-next !text-iql-brown dark:!text-white"></div>
+            <div class="swiper-button-prev !text-iql-brown dark:!text-white"></div>
         </div>
     </section>
 
@@ -144,29 +145,34 @@
         </div>
     </div>
 
-    <div class="fixed bottom-8 left-8 z-[100]">
-        <button onclick="document.getElementById('koleksi').scrollIntoView({behavior: 'smooth'})" 
-                class="bg-iql-brown dark:bg-[#f8f1ed] text-white dark:text-iql-dark p-5 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center group">
-            <i data-lucide="shopping-bag" class="w-6 h-6"></i>
-            <span class="max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:ml-3 transition-all duration-500 text-[10px] font-bold uppercase tracking-widest whitespace-nowrap">Shop Collection</span>
-        </button>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         lucide.createIcons();
 
+        // DATA 10 MAIN PRODUCTS + 5 ACCESSORIES
         const products = [
             { name: "Oxford Tote", price: "1.250.000", img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=800", desc: "Premium handcrafted pull-up leather tote bag.", isBestSeller: true },
             { name: "Slim Wallet", price: "450.000", img: "https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=800", desc: "Minimalist bifold slim leather wallet.", isBestSeller: false },
             { name: "Classic Belt", price: "350.000", img: "https://images.unsplash.com/photo-1530173336844-31533318079a?q=80&w=800", desc: "Vegetable tanned leather belt with brass buckle.", isBestSeller: true },
             { name: "Travel Case", price: "750.000", img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800", desc: "Elegant pouch for your travel essentials.", isBestSeller: false },
-            { name: "Card Holder", price: "150.000", img: "https://images.unsplash.com/photo-1614352232749-92c2a9c336b9?q=80&w=800", desc: "Ultra-slim daily card companion.", isBestSeller: false },
-            { name: "Camera Strap", price: "250.000", img: "https://images.unsplash.com/photo-1516724562728-afc824a36e84?q=80&w=800", desc: "Durable leather strap for professional use.", isBestSeller: false }
+            { name: "Duffel Bag", price: "2.100.000", img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=800", desc: "Weekend getaway duffel in grain leather.", isBestSeller: true },
+            { name: "Briefcase", price: "1.850.000", img: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=800", desc: "Professional leather briefcase for laptops.", isBestSeller: false },
+            { name: "Messenger Bag", price: "1.400.000", img: "https://images.unsplash.com/photo-1524498250077-390f9e378fc0?q=80&w=800", desc: "Vintage style cross-body messenger.", isBestSeller: false },
+            { name: "Satchel", price: "1.150.000", img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800", desc: "Small leather satchel for urban explorers.", isBestSeller: false },
+            { name: "Backpack", price: "1.900.000", img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=800", desc: "Ergonomic leather backpack for daily use.", isBestSeller: true },
+            { name: "Clutch Bag", price: "600.000", img: "https://images.unsplash.com/photo-1566150905458-1bf1fd113f0d?q=80&w=800", desc: "Handheld leather clutch for formal events.", isBestSeller: false }
         ];
 
-        // Render Produk Utama (Slider 1)
-        document.getElementById('featured-list').innerHTML = products.slice(0, 4).map(p => `
+        const accessories = [
+            { name: "Card Holder", price: "150.000", img: "https://images.unsplash.com/photo-1614352232749-92c2a9c336b9?q=80&w=800", desc: "Ultra-slim daily card companion." },
+            { name: "Camera Strap", price: "250.000", img: "https://images.unsplash.com/photo-1516724562728-afc824a36e84?q=80&w=800", desc: "Durable leather strap for professional use." },
+            { name: "Key Loop", price: "95.000", img: "https://images.unsplash.com/photo-1582142839970-2b9e04b60f25?q=80&w=800", desc: "Handy leather loop for your keys." },
+            { name: "Watch Strap", price: "300.000", img: "https://images.unsplash.com/photo-1522337360788-8b13df772ce1?q=80&w=800", desc: "Custom leather watch band." },
+            { name: "Leather Balm", price: "120.000", img: "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=800", desc: "Natural wax for leather maintenance." }
+        ];
+
+        // Render Featured
+        document.getElementById('featured-list').innerHTML = products.map(p => `
             <div class="swiper-slide cursor-pointer group" onclick="openModal('${p.name}', '${p.price}', '${p.img}', '${p.desc}')">
                 <div class="relative aspect-[3/4] overflow-hidden rounded-[2rem] bg-gray-200 dark:bg-white/5 shadow-lg group-hover:shadow-2xl transition-all duration-700">
                     ${p.isBestSeller ? `<div class="absolute top-5 left-5 z-10 animate-pulse-slow bg-iql-gold text-white text-[8px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg">Best Seller</div>` : ''}
@@ -175,8 +181,8 @@
                 </div>
             </div>`).join('');
 
-        // Render Aksesoris (Slider 2)
-        document.getElementById('extra-list').innerHTML = products.slice(4, 6).map(p => `
+        // Render Accessories
+        document.getElementById('extra-list').innerHTML = accessories.map(p => `
             <div class="swiper-slide cursor-pointer group" onclick="openModal('${p.name}', '${p.price}', '${p.img}', '${p.desc}')">
                 <div class="flex items-center space-x-6">
                     <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-iql-accent group-hover:rotate-12 transition-all duration-500 flex-shrink-0">
@@ -186,11 +192,10 @@
                 </div>
             </div>`).join('');
 
-        // Render IG Grid
-        const igImgs = [products[0].img, products[1].img, products[2].img, products[3].img, products[4].img];
-        document.getElementById('ig-grid').innerHTML = igImgs.map(img => `
+        // Render IG
+        document.getElementById('ig-grid').innerHTML = products.slice(0, 5).map(p => `
             <div class="aspect-square overflow-hidden bg-gray-200 group relative">
-                <img src="${img}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                <img src="${p.img}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                 <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"><i data-lucide="instagram"></i></div>
             </div>`).join('');
 
@@ -208,7 +213,7 @@
 
         // SWIPER INITS
         new Swiper(".heroSwiper", { loop: true, autoplay: { delay: 4000 }, pagination: { el: ".swiper-pagination", clickable: true } });
-        new Swiper(".productSwiper", { slidesPerView: 1.2, spaceBetween: 20, breakpoints: { 1024: { slidesPerView: 3.5 } } });
+        new Swiper(".productSwiper", { slidesPerView: 1.2, spaceBetween: 20, navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }, breakpoints: { 1024: { slidesPerView: 3.5 } } });
         new Swiper(".accessorySwiper", { slidesPerView: 1.1, spaceBetween: 20, breakpoints: { 1024: { slidesPerView: 2.5 } } });
         new Swiper(".testiSwiper", { slidesPerView: 1, spaceBetween: 20, loop: true, autoplay: { delay: 3500 }, pagination: { el: ".swiper-pagination", clickable: true }, breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } } });
 
@@ -245,4 +250,4 @@
         }
     </script>
 </body>
-</html>
+    </html>
