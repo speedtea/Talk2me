@@ -12,14 +12,9 @@
     
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
-                    colors: {
-                        'iql-brown': '#5c4033',
-                        'iql-accent': '#8b5e3c',
-                        'iql-bg': '#fdfaf5',
-                    }
+                    colors: { 'iql-brown': '#5c4033', 'iql-accent': '#8b5e3c', 'iql-bg': '#fdfaf5' }
                 }
             }
         }
@@ -28,17 +23,10 @@
     <style>
         :root { scroll-behavior: smooth; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fdfaf5; overflow-x: hidden; }
-        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
-        
-        /* Custom Swiper Dots */
+        .serif { font-family: 'Playfair Display', serif; }
         .swiper-pagination-bullet-active { background: #5c4033 !important; }
-        
-        /* WA Float Animation */
         .float-wa { animation: bounce 2s infinite; }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-10px);}
-        }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} }
     </style>
 </head>
 <body class="antialiased">
@@ -50,120 +38,106 @@
     <nav class="flex justify-between items-center px-6 md:px-12 py-5 sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/5">
         <div class="text-2xl font-bold tracking-[0.2em] text-iql-brown uppercase serif">IQL.</div>
         <div class="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.2em] font-bold text-gray-400">
-            <a href="#home" class="hover:text-iql-brown">Home</a>
-            <a href="#koleksi" class="hover:text-iql-brown">Shop</a>
-            <a href="https://instagram.com/USERNAME_IG" target="_blank" class="hover:text-iql-brown">Instagram</a>
+            <a href="#home" class="hover:text-iql-brown transition-colors">Home</a>
+            <a href="#koleksi" class="hover:text-iql-brown transition-colors">Shop</a>
+            <a href="https://instagram.com/USERNAME_IG" target="_blank" class="hover:text-iql-brown transition-colors">Instagram</a>
         </div>
-        <div class="flex items-center space-x-4">
-            <a href="https://wa.me/6281234567890" class="text-[9px] font-bold uppercase tracking-widest bg-iql-brown text-white px-5 py-2 rounded-full">Contact</a>
-        </div>
+        <a href="https://wa.me/6281234567890" class="text-[9px] font-bold uppercase tracking-widest bg-iql-brown text-white px-5 py-2 rounded-full hover:bg-black transition-all">Contact</a>
     </nav>
 
-    <header id="home" class="relative w-full h-[70vh] md:h-[85vh]">
+    <header id="home" class="relative w-full h-[65vh] md:h-[80vh]">
         <div class="swiper heroSwiper h-full w-full">
             <div class="swiper-wrapper">
-                
-                <div class="swiper-slide relative overflow-hidden">
+                <div class="swiper-slide relative">
                     <img src="https://images.unsplash.com/photo-1473187983305-f615310e7daa?q=80&w=2000" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/20 flex flex-col items-center justify-center text-center text-white p-6">
-                        <span class="text-[10px] uppercase tracking-[0.6em] mb-4 font-bold">New Arrival 2026</span>
-                        <h1 class="text-5xl md:text-8xl serif mb-8">The Heritage <br><i>Collection.</i></h1>
-                        <a href="#koleksi" class="bg-white text-black px-10 py-4 text-[10px] font-bold uppercase tracking-widest hover:bg-iql-brown hover:text-white transition-all">Jelajahi Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide relative overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=2000" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-center text-white p-6">
-                        <span class="text-[10px] uppercase tracking-[0.6em] mb-4 font-bold">Crafted for You</span>
-                        <h1 class="text-5xl md:text-8xl serif mb-8">Elegansi <br><i>Tanpa Batas.</i></h1>
-                        <a href="https://wa.me/6281234567890" class="bg-white text-black px-10 py-4 text-[10px] font-bold uppercase tracking-widest hover:bg-iql-brown hover:text-white transition-all">Custom Order</a>
+                        <span class="text-[10px] uppercase tracking-[0.6em] mb-4 font-bold">Premium Selection</span>
+                        <h1 class="text-5xl md:text-7xl serif mb-8 italic">Artisanal Leather</h1>
+                        <a href="#koleksi" class="bg-white text-black px-10 py-4 text-[10px] font-bold uppercase tracking-widest hover:bg-iql-brown hover:text-white transition-all">Shop Now</a>
                     </div>
                 </div>
-
+                <div class="swiper-slide relative">
+                    <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=2000" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center text-white p-6">
+                        <span class="text-[10px] uppercase tracking-[0.6em] mb-4 font-bold">New Arrival</span>
+                        <h1 class="text-5xl md:text-7xl serif mb-8">Timeless Style</h1>
+                        <a href="https://wa.me/6281234567890" class="bg-white text-black px-10 py-4 text-[10px] font-bold uppercase tracking-widest hover:bg-iql-brown hover:text-white transition-all">Contact Us</a>
+                    </div>
+                </div>
             </div>
-            <div class="swiper-button-next !text-white opacity-50 hover:opacity-100 transition-opacity"></div>
-            <div class="swiper-button-prev !text-white opacity-50 hover:opacity-100 transition-opacity"></div>
             <div class="swiper-pagination"></div>
         </div>
     </header>
 
     <section id="koleksi" class="py-24 bg-[#fdfaf5]">
-        <div class="max-w-7xl mx-auto px-6 mb-16 flex justify-between items-end">
-            <div>
-                <h2 class="text-4xl serif italic">Best Sellers</h2>
-                <p class="text-[10px] uppercase tracking-widest text-iql-accent font-bold mt-2">Koleksi Kulit Pilihan</p>
-            </div>
+        <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
+            <h2 class="text-4xl serif italic mb-2">Our Collection</h2>
+            <div class="w-12 h-px bg-iql-brown mx-auto mb-4"></div>
         </div>
 
         <div class="swiper productSwiper max-w-7xl mx-auto px-6 !pb-12">
             <div class="swiper-wrapper">
-                <div class="swiper-slide px-2">
-                    <div class="group">
-                        <div class="relative aspect-[3/4] overflow-hidden rounded-2xl mb-6 bg-gray-100 shadow-lg">
-                            <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                            <a href="https://shopee.co.id" target="_blank" class="absolute bottom-0 left-0 w-full bg-black/80 text-white py-4 text-center text-[10px] font-bold uppercase tracking-widest translate-y-full group-hover:translate-y-0 transition-transform">Cek di Shopee</a>
+                
+                <script>
+                    const products = [
+                        { name: "Classic Oxford Tote", price: "1.250.000", img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=800" },
+                        { name: "Slim Bifold Wallet", price: "450.000", img: "https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=800" },
+                        { name: "Artisanal Belt", price: "350.000", img: "https://images.unsplash.com/photo-1530173336844-31533318079a?q=80&w=800" },
+                        { name: "Traveler Pouch", price: "750.000", img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800" }
+                    ];
+
+                    document.write(products.map(p => `
+                        <div class="swiper-slide px-2">
+                            <div class="group relative">
+                                <div class="relative aspect-[3/4] overflow-hidden rounded-2xl mb-6 bg-white shadow-md">
+                                    <img src="${p.img}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                                    
+                                    <button onclick="shareProduct('${p.name}')" class="absolute top-4 right-4 bg-white/80 p-2 rounded-full shadow-lg hover:bg-iql-brown hover:text-white transition-all z-10">
+                                        <i data-lucide="share-2" class="w-4 h-4"></i>
+                                    </button>
+
+                                    <a href="https://shopee.co.id" target="_blank" class="absolute bottom-0 left-0 w-full bg-black/80 text-white py-4 text-center text-[10px] font-bold uppercase tracking-widest translate-y-full group-hover:translate-y-0 transition-transform">Beli di Shopee</a>
+                                </div>
+                                <h3 class="text-lg serif text-center">${p.name}</h3>
+                                <p class="text-center text-iql-accent font-bold text-sm mt-1">IDR ${p.price}</p>
+                            </div>
                         </div>
-                        <h3 class="text-xl serif text-center">Oxford Tote Bag</h3>
-                        <p class="text-center text-iql-accent font-bold text-sm mt-2 tracking-tighter">IDR 1.250.000</p>
-                    </div>
-                </div>
-                <div class="swiper-slide px-2">
-                    <div class="group">
-                        <div class="relative aspect-[3/4] overflow-hidden rounded-2xl mb-6 bg-gray-100 shadow-lg">
-                            <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                            <a href="https://shopee.co.id" target="_blank" class="absolute bottom-0 left-0 w-full bg-black/80 text-white py-4 text-center text-[10px] font-bold uppercase tracking-widest translate-y-full group-hover:translate-y-0 transition-transform">Cek di Shopee</a>
-                        </div>
-                        <h3 class="text-xl serif text-center">Slim Leather Wallet</h3>
-                        <p class="text-center text-iql-accent font-bold text-sm mt-2 tracking-tighter">IDR 450.000</p>
-                    </div>
-                </div>
-                <div class="swiper-slide px-2">
-                    <div class="group">
-                        <div class="relative aspect-[3/4] overflow-hidden rounded-2xl mb-6 bg-gray-100 shadow-lg">
-                            <img src="https://images.unsplash.com/photo-1530173336844-31533318079a?q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                            <a href="https://shopee.co.id" target="_blank" class="absolute bottom-0 left-0 w-full bg-black/80 text-white py-4 text-center text-[10px] font-bold uppercase tracking-widest translate-y-full group-hover:translate-y-0 transition-transform">Cek di Shopee</a>
-                        </div>
-                        <h3 class="text-xl serif text-center">Vintage Belt</h3>
-                        <p class="text-center text-iql-accent font-bold text-sm mt-2 tracking-tighter">IDR 350.000</p>
-                    </div>
-                </div>
+                    `).join(''));
+                </script>
+
             </div>
             <div class="swiper-pagination !static mt-10"></div>
         </div>
     </section>
 
     <footer class="py-20 px-6 bg-white border-t border-black/5 text-center">
-        <div class="text-3xl font-bold tracking-[0.3em] text-iql-brown mb-6 serif">IQL.</div>
-        <div class="flex justify-center space-x-6 mb-10 text-gray-400">
-            <a href="https://instagram.com/USERNAME_IG" target="_blank" class="hover:text-iql-accent transition-colors"><i data-lucide="instagram"></i></a>
-            <a href="https://wa.me/6281234567890" target="_blank" class="hover:text-[#25D366] transition-colors"><i data-lucide="message-circle"></i></a>
-        </div>
-        <p class="text-[9px] text-gray-400 uppercase tracking-widest italic">Est. 2026 — Artisanal Leather Heritage Indonesia</p>
+        <div class="text-3xl font-bold tracking-[0.4em] text-iql-brown mb-6 serif uppercase">IQL.</div>
+        <p class="text-[9px] text-gray-400 uppercase tracking-[0.3em]">© 2026 IQL Indonesia — Crafted for Excellence</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         lucide.createIcons();
 
-        // Hero Slider (Banner Atas)
-        new Swiper(".heroSwiper", {
-            loop: true,
-            autoplay: { delay: 5000 },
-            pagination: { el: ".swiper-pagination", clickable: true },
-            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-        });
-
-        // Product Slider (Katalog)
-        new Swiper(".productSwiper", {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            pagination: { el: ".swiper-pagination", clickable: true },
-            breakpoints: {
-                640: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 }
+        // Fitur Share
+        function shareProduct(name) {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Produk IQL: ' + name,
+                    text: 'Lihat produk kulit premium ' + name + ' dari IQL Studio.',
+                    url: window.location.href,
+                }).catch(console.error);
+            } else {
+                alert("Link produk berhasil disalin!");
             }
+        }
+
+        new Swiper(".heroSwiper", { loop: true, autoplay: { delay: 5000 }, pagination: { el: ".swiper-pagination", clickable: true } });
+        new Swiper(".productSwiper", { 
+            slidesPerView: 1.2, spaceBetween: 15, 
+            pagination: { el: ".swiper-pagination", clickable: true },
+            breakpoints: { 640: { slidesPerView: 2.2 }, 1024: { slidesPerView: 4 } }
         });
     </script>
 </body>
-                            </html>
+</html>
