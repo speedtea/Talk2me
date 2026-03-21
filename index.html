@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IQL | Premium Craft & Shop</title>
+    <title>IQL | Premium Leather & Craft</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -30,167 +32,153 @@
 
     <style>
         :root { scroll-behavior: smooth; }
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #fdfaf5; 
-            color: #3a2a21;
-            transition: background-color 0.5s ease;
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fdfaf5; color: #3a2a21; transition: all 0.5s ease; }
         h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
-        ::selection { background: #5c4033; color: #fff; }
-        .glass-nav {
-            backdrop-filter: blur(12px);
-            background-color: rgba(253, 250, 245, 0.8);
-        }
+        .glass-nav { backdrop-filter: blur(12px); background-color: rgba(253, 250, 245, 0.8); }
         .dark body { background-color: #1a1410; color: #fdfaf5; }
         .dark .glass-nav { background-color: rgba(26, 20, 16, 0.8); }
-        .dark ::selection { background: #fdfaf5; color: #1a1410; }
+        
+        /* Custom Swiper Style */
+        .swiper-button-next, .swiper-button-prev { color: #5c4033 !important; transform: scale(0.7); }
+        .swiper-pagination-bullet-active { background: #5c4033 !important; }
     </style>
 </head>
 <body class="antialiased">
 
     <nav class="flex justify-between items-center px-6 md:px-12 py-6 sticky top-0 z-50 glass-nav border-b border-black/5">
         <div class="text-2xl font-bold tracking-[0.2em] text-iql-brown dark:text-iql-accent uppercase serif">IQL.</div>
-        
-        <div class="hidden md:flex space-x-10 text-[11px] uppercase tracking-[0.2em] font-semibold text-gray-600 dark:text-gray-400">
-            <a href="#home" class="hover:text-iql-brown transition-colors">Beranda</a>
-            <a href="#works" class="hover:text-iql-brown transition-colors">Koleksi</a>
-            <a href="#about" class="hover:text-iql-brown transition-colors">Tentang</a>
+        <div class="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500">
+            <a href="#home" class="hover:text-iql-brown">Home</a>
+            <a href="#koleksi" class="hover:text-iql-brown">Koleksi</a>
+            <a href="#contact" class="hover:text-iql-brown">Contact</a>
         </div>
-
-        <div class="flex items-center space-x-6">
-            <button id="theme-toggle" class="text-iql-brown dark:text-iql-accent">
-                <i id="theme-icon" data-lucide="moon" class="w-5 h-5"></i>
-            </button>
-            <a href="https://wa.me/NOMOR_WA_KAMU" target="_blank" class="hidden md:block bg-iql-brown text-white text-[10px] px-6 py-3 rounded-sm uppercase tracking-widest hover:bg-iql-dark transition-all">
-                Hubungi Kami
-            </a>
+        <div class="flex items-center space-x-4">
+            <button id="theme-toggle" class="p-2"><i id="theme-icon" data-lucide="moon" class="w-5 h-5"></i></button>
         </div>
     </nav>
 
-    <section id="home" class="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        <div data-aos="fade-right" data-aos-duration="1000">
-            <span class="text-xs uppercase tracking-[0.4em] text-iql-accent font-bold mb-6 block">Premium Craftsmanship</span>
-            <h1 class="text-5xl md:text-7xl leading-[1.1] mb-8 text-iql-dark dark:text-iql-bg">Kualitas Abadi, <br><i class="serif font-normal text-iql-accent">Sentuhan IQL.</i></h1>
-            <p class="text-gray-600 dark:text-gray-400 mb-10 max-w-md leading-relaxed text-sm md:text-base">
-                Dibuat dengan ketelitian tinggi untuk menciptakan karya yang tidak hanya indah dipandang, tapi juga bermakna bagi gaya hidup Anda.
-            </p>
-            <div class="flex items-center space-x-8">
-                <a href="#works" class="bg-iql-brown text-white px-8 py-4 rounded-sm text-[10px] uppercase tracking-widest hover:shadow-2xl transition-all">Lihat Produk</a>
-                <a href="#about" class="text-iql-brown dark:text-iql-accent font-bold text-xs tracking-widest border-b border-iql-brown pb-1">Cerita Kami</a>
-            </div>
+    <section id="home" class="max-w-7xl mx-auto px-6 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+            <span class="text-[10px] uppercase tracking-[0.5em] text-iql-accent font-bold mb-4 block">Handmade Excellence</span>
+            <h1 class="text-5xl md:text-7xl leading-tight mb-6">Karya Klasik <br><i class="serif font-normal text-iql-accent">IQL Studio.</i></h1>
+            <p class="text-gray-500 mb-8 text-sm leading-loose max-w-sm">Eksplorasi material kulit premium dengan desain yang melampaui waktu.</p>
+            <a href="#koleksi" class="bg-iql-brown text-white px-8 py-4 text-[10px] uppercase tracking-[0.3em] inline-block hover:bg-iql-dark transition-all shadow-xl">Belanja Sekarang</a>
         </div>
-
-        <div class="relative" data-aos="zoom-in" data-aos-duration="1200">
-            <div class="aspect-[4/5] rounded-t-[120px] rounded-b-lg overflow-hidden shadow-2xl border-[12px] border-white dark:border-zinc-900">
-                <img src="https://images.unsplash.com/photo-1547949003-9792a18a2601?q=80&w=1000" class="w-full h-full object-cover">
-            </div>
-            <div class="absolute -bottom-6 -right-6 bg-iql-accent text-white p-8 rounded-full w-32 h-32 flex flex-col items-center justify-center text-center shadow-xl">
-                <span class="text-[8px] uppercase tracking-tighter">Est.</span>
-                <span class="serif italic text-xl">2026</span>
-                <span class="text-[8px] uppercase tracking-tighter">Original</span>
-            </div>
+        <div class="relative" data-aos="zoom-in">
+            <img src="https://images.unsplash.com/photo-1547949003-9792a18a2601?q=80&w=1000" class="rounded-t-[100px] rounded-b-xl shadow-2xl w-full aspect-[4/5] object-cover border-[10px] border-white dark:border-zinc-900">
         </div>
     </section>
 
-    <section id="works" class="bg-[#f7f1e9] dark:bg-[#15100d] py-24 px-6 md:px-12 transition-colors">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16" data-aos="fade-up">
-                <div>
-                    <h2 class="text-4xl md:text-5xl text-iql-dark dark:text-iql-bg mb-4">Koleksi Terpilih</h2>
-                    <p class="text-iql-accent font-medium tracking-widest uppercase text-[10px]">Klik gambar untuk beli di Shopee</p>
-                </div>
-                <div class="h-px bg-iql-brown/20 flex-grow mx-10 mb-4 hidden md:block"></div>
+    <section id="koleksi" class="py-24 bg-[#f1ece4] dark:bg-[#15100d] overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 mb-12 flex justify-between items-end">
+            <div>
+                <h2 class="text-4xl serif mb-2">Produk Unggulan</h2>
+                <p class="text-[10px] uppercase tracking-widest text-iql-accent font-bold">Slide untuk melihat lebih banyak</p>
             </div>
+        </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="swiper mySwiper max-w-7xl mx-auto px-6 !pb-12">
+            <div class="swiper-wrapper">
                 
-                <a href="https://shopee.co.id" target="_blank" class="group block" data-aos="fade-up" data-aos-delay="100">
-                    <div class="overflow-hidden rounded-2xl mb-6 bg-white dark:bg-zinc-900 shadow-lg relative">
-                        <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=1000" class="w-full h-[400px] object-cover group-hover:scale-110 transition duration-1000 grayscale group-hover:grayscale-0">
-                        <div class="absolute inset-0 bg-iql-brown/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="bg-white text-iql-brown px-5 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-xl">Cek di Shopee</span>
+                <div class="swiper-slide">
+                    <a href="https://shopee.co.id" target="_blank" class="group">
+                        <div class="bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden shadow-lg mb-6 relative">
+                            <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=800" class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-iql-brown/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="bg-white text-iql-brown px-4 py-2 rounded-full text-[9px] font-bold uppercase shadow-xl">Lihat Shopee</span>
+                            </div>
                         </div>
-                    </div>
-                    <h3 class="text-2xl text-iql-dark dark:text-iql-bg mb-2 serif group-hover:text-iql-brown">Classic Chestnut Bag</h3>
-                    <p class="text-iql-brown dark:text-iql-accent font-bold tracking-tighter">IDR 1.450.000</p>
-                </a>
+                        <h3 class="text-lg serif group-hover:text-iql-brown transition-colors">Classic Tote Bag</h3>
+                        <p class="text-sm font-bold text-iql-accent tracking-tighter">IDR 1.299.000</p>
+                    </a>
+                </div>
 
-                <a href="https://shopee.co.id" target="_blank" class="group block" data-aos="fade-up" data-aos-delay="200">
-                    <div class="overflow-hidden rounded-2xl mb-6 bg-white dark:bg-zinc-900 shadow-lg relative">
-                        <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=1000" class="w-full h-[400px] object-cover group-hover:scale-110 transition duration-1000 grayscale group-hover:grayscale-0">
-                        <div class="absolute inset-0 bg-iql-brown/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="bg-white text-iql-brown px-5 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-xl">Cek di Shopee</span>
+                <div class="swiper-slide">
+                    <a href="https://shopee.co.id" target="_blank" class="group">
+                        <div class="bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden shadow-lg mb-6 relative">
+                            <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=800" class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-iql-brown/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="bg-white text-iql-brown px-4 py-2 rounded-full text-[9px] font-bold uppercase shadow-xl">Lihat Shopee</span>
+                            </div>
                         </div>
-                    </div>
-                    <h3 class="text-2xl text-iql-dark dark:text-iql-bg mb-2 serif group-hover:text-iql-brown">Vintage Billfold Wallet</h3>
-                    <p class="text-iql-brown dark:text-iql-accent font-bold tracking-tighter">IDR 580.000</p>
-                </a>
+                        <h3 class="text-lg serif group-hover:text-iql-brown transition-colors">Slim Card Wallet</h3>
+                        <p class="text-sm font-bold text-iql-accent tracking-tighter">IDR 450.000</p>
+                    </a>
+                </div>
 
-                <a href="https://shopee.co.id" target="_blank" class="group block" data-aos="fade-up" data-aos-delay="300">
-                    <div class="overflow-hidden rounded-2xl mb-6 bg-white dark:bg-zinc-900 shadow-lg relative">
-                        <img src="https://images.unsplash.com/photo-1530173336844-31533318079a?q=80&w=1000" class="w-full h-[400px] object-cover group-hover:scale-110 transition duration-1000 grayscale group-hover:grayscale-0">
-                        <div class="absolute inset-0 bg-iql-brown/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="bg-white text-iql-brown px-5 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-xl">Cek di Shopee</span>
+                <div class="swiper-slide">
+                    <a href="https://shopee.co.id" target="_blank" class="group">
+                        <div class="bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden shadow-lg mb-6 relative">
+                            <img src="https://images.unsplash.com/photo-1530173336844-31533318079a?q=80&w=800" class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-iql-brown/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="bg-white text-iql-brown px-4 py-2 rounded-full text-[9px] font-bold uppercase shadow-xl">Lihat Shopee</span>
+                            </div>
                         </div>
-                    </div>
-                    <h3 class="text-2xl text-iql-dark dark:text-iql-bg mb-2 serif group-hover:text-iql-brown">Minimalist Journal</h3>
-                    <p class="text-iql-brown dark:text-iql-accent font-bold tracking-tighter">IDR 320.000</p>
-                </a>
+                        <h3 class="text-lg serif group-hover:text-iql-brown transition-colors">Handcrafted Belt</h3>
+                        <p class="text-sm font-bold text-iql-accent tracking-tighter">IDR 350.000</p>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="https://shopee.co.id" target="_blank" class="group">
+                        <div class="bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden shadow-lg mb-6 relative">
+                            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800" class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-iql-brown/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="bg-white text-iql-brown px-4 py-2 rounded-full text-[9px] font-bold uppercase shadow-xl">Lihat Shopee</span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg serif group-hover:text-iql-brown transition-colors">Travel Pouch</h3>
+                        <p class="text-sm font-bold text-iql-accent tracking-tighter">IDR 720.000</p>
+                    </a>
+                </div>
 
             </div>
+            <div class="swiper-pagination !-bottom-2"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </section>
 
-    <footer class="py-20 px-6 md:px-12 border-t border-gray-200 dark:border-zinc-800">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div class="col-span-1 md:col-span-2">
-                <div class="text-3xl font-bold tracking-widest text-iql-brown mb-6 serif uppercase">IQL.</div>
-                <p class="text-gray-500 text-sm max-w-sm leading-loose italic">
-                    "Menghadirkan keindahan dalam setiap detail kerajinan."
-                </p>
+    <footer id="contact" class="py-20 px-6 md:px-12 bg-white dark:bg-zinc-950 border-t border-black/5">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="text-3xl font-bold tracking-[0.3em] text-iql-brown mb-6 serif uppercase">IQL.</div>
+            <p class="text-gray-400 text-[10px] tracking-[0.5em] uppercase mb-10">Crafting Memories Since 2026</p>
+            <div class="flex justify-center space-x-8 mb-16">
+                <a href="#" class="text-gray-400 hover:text-iql-brown transition-colors"><i data-lucide="instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-iql-brown transition-colors"><i data-lucide="twitter"></i></a>
             </div>
-            <div>
-                <h4 class="font-bold mb-6 uppercase text-[10px] tracking-widest text-iql-accent">Menu</h4>
-                <ul class="text-gray-500 space-y-4 text-xs">
-                    <li><a href="#home" class="hover:text-iql-brown">Beranda</a></li>
-                    <li><a href="#works" class="hover:text-iql-brown">Koleksi Shopee</a></li>
-                    <li><a href="https://wa.me/NOMOR_WA" class="hover:text-iql-brown">WhatsApp</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold mb-6 uppercase text-[10px] tracking-widest text-iql-accent">Sosial Media</h4>
-                <div class="flex space-x-6 text-gray-400">
-                    <a href="#" class="hover:text-iql-brown"><i data-lucide="instagram"></i></a>
-                    <a href="#" class="hover:text-iql-brown"><i data-lucide="facebook"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto mt-20 pt-10 border-t border-gray-100 dark:border-zinc-900 text-center">
-            <p class="text-[10px] text-gray-400 uppercase tracking-[0.4em]">© 2026 IQL — ALL RIGHTS RESERVED</p>
+            <p class="text-[9px] text-gray-400 uppercase tracking-widest">© IQL Indonesian Artisanal Heritage</p>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ once: true, duration: 800 });
+        AOS.init({ once: true });
         lucide.createIcons();
+
+        // Swiper Configuration
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: { delay: 3000, disableOnInteraction: false },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+            breakpoints: {
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+            }
+        });
 
         // Dark Mode Logic
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const htmlElement = document.documentElement;
 
-        if (localStorage.getItem('theme') === 'dark') {
-            htmlElement.classList.add('dark');
-            themeIcon.setAttribute('data-lucide', 'sun');
-            lucide.createIcons();
-        }
-
         themeToggleBtn.addEventListener('click', () => {
             htmlElement.classList.toggle('dark');
             const isDark = htmlElement.classList.contains('dark');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
             themeIcon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
             lucide.createIcons();
         });
