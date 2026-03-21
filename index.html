@@ -55,6 +55,18 @@ nav a:hover {
     opacity: 0.6;
     letter-spacing: 0.1em;
 }
+        /* Custom Cursor Style */
+#cursor {
+    width: 20px;
+    height: 20px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease, background 0.3s ease;
+}
+@media (max-width: 768px) { #cursor { display: none; } } /* Sembunyikan di HP */
     </style>
 </head>
 <body class="bg-white text-black dark:bg-zinc-950 dark:text-white antialiased overflow-x-hidden">
@@ -163,5 +175,19 @@ nav a:hover {
             lucide.createIcons();
         });
     </script>
+
+    <div id="cursor"></div>
+<script>
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX - 10 + 'px';
+        cursor.style.top = e.clientY - 10 + 'px';
+    });
+    // Efek membesar saat hover link
+    document.querySelectorAll('a, button').forEach(link => {
+        link.addEventListener('mouseenter', () => cursor.style.transform = 'scale(2.5)');
+        link.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
+    });
+</script>
 </body>
         </html>
