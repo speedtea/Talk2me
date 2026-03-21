@@ -138,4 +138,37 @@
     </section>
 
     <footer class="py-16 px-6 bg-white border-t border-black/5 text-center">
-        <div class="text-2xl font-bold tracking-[0.4em] text-iql-
+        <div class="text-2xl font-bold tracking-[0.4em] text-iql-brown mb-8 serif">IQL.</div>
+        
+        <div class="mb-10">
+            <p class="text-[8px] uppercase tracking-[0.2em] text-gray-400 mb-4 font-bold">Metode Pembayaran</p>
+            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg" alt="BCA" class="payment-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Bank_Mandiri_logo_2016.svg" alt="Mandiri" class="payment-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/BRI_Logo.svg" alt="BRI" class="payment-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Logo_ovo_purple.svg" alt="OVO" class="payment-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_dana_blue.svg" alt="DANA" class="payment-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Logo_GoPay.svg" alt="GOPAY" class="payment-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Logo_ShopeePay.svg" alt="ShopeePay" class="payment-icon">
+            </div>
+        </div>
+
+        <p class="text-[9px] text-gray-400 uppercase tracking-[0.2em]">© 2026 IQL Indonesia — Handcrafted Excellence</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        lucide.createIcons();
+        function shareProduct(name) {
+            if (navigator.share) {
+                navigator.share({ title: 'IQL Produk', text: 'Cek ' + name + ' dari IQL Studio', url: window.location.href });
+            } else { alert("Link disalin ke clipboard!"); }
+        }
+        new Swiper(".heroSwiper", { loop: true, autoplay: { delay: 4000 }, pagination: { el: ".swiper-pagination", clickable: true } });
+        new Swiper(".productSwiper", { 
+            slidesPerView: 1.3, spaceBetween: 15, pagination: { el: ".swiper-pagination", clickable: true },
+            breakpoints: { 640: { slidesPerView: 2.3 }, 1024: { slidesPerView: 4 } }
+        });
+    </script>
+</body>
+</html>
