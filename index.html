@@ -48,14 +48,27 @@
 
     <nav class="flex justify-between items-center px-6 md:px-12 py-6 sticky top-0 z-50 bg-[#fdfaf5]/90 dark:bg-iql-dark/90 backdrop-blur-md border-b border-black/5 dark:border-white/5">
         <a href="#" class="brand-logo text-xl md:text-2xl text-iql-brown dark:text-[#f8f1ed]">IQL</a>
-        <button id="theme-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
-            <i id="theme-toggle-dark-icon" data-lucide="moon" class="hidden w-5 h-5"></i>
-            <i id="theme-toggle-light-icon" data-lucide="sun" class="hidden w-5 h-5 text-yellow-400"></i>
-        </button>
+        <div class="flex items-center space-x-2">
+            <a href="#" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+            </a>
+            <button id="theme-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                <i id="theme-toggle-dark-icon" data-lucide="moon" class="hidden w-5 h-5"></i>
+                <i id="theme-toggle-light-icon" data-lucide="sun" class="hidden w-5 h-5 text-yellow-400"></i>
+            </button>
+        </div>
     </nav>
 
-    <div class="swiper heroSwiper h-[60vh] md:h-[80vh]">
+    <div class="swiper heroSwiper h-[70vh] md:h-[85vh]">
         <div class="swiper-wrapper">
+            <div class="swiper-slide relative bg-black">
+                <img src="SnapInsta.to_638871041_17955964637987794_4490245217933918172_n.jpg" 
+                     class="w-full h-full object-cover md:object-cover brightness-90">
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-6 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                    <h2 class="text-5xl md:text-8xl serif italic mb-4">The Visionary</h2>
+                    <p class="text-[10px] tracking-[0.5em] uppercase opacity-80">Crafting Legacy with Soul</p>
+                </div>
+            </div>
             <div class="swiper-slide relative">
                 <img src="https://images.unsplash.com/photo-1473187983305-f615310e7daa?q=80&w=2000" class="w-full h-full object-cover brightness-50">
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-6">
@@ -63,28 +76,25 @@
                     <p class="text-[10px] tracking-[0.5em] uppercase opacity-80">Handcrafted Excellence</p>
                 </div>
             </div>
-            <div class="swiper-slide relative">
-                <img src="https://images.unsplash.com/photo-1547949003-9792a18a2601?q=80&w=2000" class="w-full h-full object-cover brightness-50">
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-6">
-                    <h2 class="text-5xl md:text-7xl serif italic mb-4 text-iql-gold">Timeless Spirit</h2>
-                    <p class="max-w-md text-sm opacity-80 italic">Luxury leather goods for your daily journey.</p>
-                </div>
-            </div>
         </div>
         <div class="swiper-pagination"></div>
     </div>
 
     <section id="koleksi" class="py-24 max-w-7xl mx-auto px-6">
-        <h2 class="text-3xl serif italic mb-12">Featured Collection</h2>
+        <div class="flex justify-between items-end mb-12">
+            <h2 class="text-3xl serif italic">Featured Collection</h2>
+            <div class="hidden md:flex space-x-2">
+                <div class="swiper-prev-main p-3 border border-black/10 dark:border-white/10 rounded-full cursor-pointer hover:bg-iql-brown hover:text-white transition-all"><i data-lucide="chevron-left" class="w-4 h-4"></i></div>
+                <div class="swiper-next-main p-3 border border-black/10 dark:border-white/10 rounded-full cursor-pointer hover:bg-iql-brown hover:text-white transition-all"><i data-lucide="chevron-right" class="w-4 h-4"></i></div>
+            </div>
+        </div>
         <div class="swiper productSwiper !pb-12">
             <div class="swiper-wrapper" id="featured-list"></div>
-            <div class="swiper-button-next !text-iql-brown dark:!text-white"></div>
-            <div class="swiper-button-prev !text-iql-brown dark:!text-white"></div>
         </div>
     </section>
 
     <section class="pb-24 max-w-7xl mx-auto px-6">
-        <h3 class="text-[10px] uppercase tracking-[0.4em] opacity-40 mb-10 border-l-2 border-iql-accent pl-4">Essential Accessories</h3>
+        <h3 class="text-[10px] uppercase tracking-[0.4em] opacity-40 mb-10 border-l-2 border-iql-accent pl-4 font-bold">Essential Accessories</h3>
         <div class="swiper accessorySwiper !pb-12">
             <div class="swiper-wrapper" id="extra-list"></div>
         </div>
@@ -125,7 +135,7 @@
                 <h5 class="text-[10px] font-bold uppercase tracking-widest mb-6 text-iql-accent">Connect</h5>
                 <div class="flex justify-center md:justify-start space-x-6 opacity-50">
                     <a href="#"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                    <a href="https://wa.me/6281234567890"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
+                    <a href="#"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
                 </div>
             </div>
         </div>
@@ -140,16 +150,23 @@
                 <h2 id="modal-title" class="text-3xl serif italic mb-2 text-iql-brown dark:text-[#f8f1ed]"></h2>
                 <p id="modal-price" class="text-iql-accent font-bold mb-6"></p>
                 <p id="modal-desc" class="text-sm opacity-70 mb-8 leading-relaxed font-light"></p>
-                <a id="modal-wa-link" href="#" target="_blank" class="bg-iql-brown dark:bg-[#f8f1ed] text-white dark:text-iql-dark text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">Order via WhatsApp</a>
+                <a id="modal-wa-link" href="#" target="_blank" class="bg-iql-brown dark:bg-[#f8f1ed] text-white dark:text-iql-dark text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg transition-transform active:scale-95">Order via WhatsApp</a>
             </div>
         </div>
+    </div>
+
+    <div class="fixed bottom-8 left-8 z-[100]">
+        <button onclick="document.getElementById('koleksi').scrollIntoView({behavior: 'smooth'})" 
+                class="bg-iql-brown dark:bg-[#f8f1ed] text-white dark:text-iql-dark p-5 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center group">
+            <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+            <span class="max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:ml-3 transition-all duration-500 text-[10px] font-bold uppercase tracking-widest whitespace-nowrap">Shop Collection</span>
+        </button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         lucide.createIcons();
 
-        // DATA 10 MAIN PRODUCTS + 5 ACCESSORIES
         const products = [
             { name: "Oxford Tote", price: "1.250.000", img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=800", desc: "Premium handcrafted pull-up leather tote bag.", isBestSeller: true },
             { name: "Slim Wallet", price: "450.000", img: "https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=800", desc: "Minimalist bifold slim leather wallet.", isBestSeller: false },
@@ -158,7 +175,7 @@
             { name: "Duffel Bag", price: "2.100.000", img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=800", desc: "Weekend getaway duffel in grain leather.", isBestSeller: true },
             { name: "Briefcase", price: "1.850.000", img: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=800", desc: "Professional leather briefcase for laptops.", isBestSeller: false },
             { name: "Messenger Bag", price: "1.400.000", img: "https://images.unsplash.com/photo-1524498250077-390f9e378fc0?q=80&w=800", desc: "Vintage style cross-body messenger.", isBestSeller: false },
-            { name: "Satchel", price: "1.150.000", img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800", desc: "Small leather satchel for urban explorers.", isBestSeller: false },
+            { name: "Satchel Bag", price: "1.150.000", img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800", desc: "Small leather satchel for urban explorers.", isBestSeller: false },
             { name: "Backpack", price: "1.900.000", img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=800", desc: "Ergonomic leather backpack for daily use.", isBestSeller: true },
             { name: "Clutch Bag", price: "600.000", img: "https://images.unsplash.com/photo-1566150905458-1bf1fd113f0d?q=80&w=800", desc: "Handheld leather clutch for formal events.", isBestSeller: false }
         ];
@@ -192,7 +209,7 @@
                 </div>
             </div>`).join('');
 
-        // Render IG
+        // Render IG Grid
         document.getElementById('ig-grid').innerHTML = products.slice(0, 5).map(p => `
             <div class="aspect-square overflow-hidden bg-gray-200 group relative">
                 <img src="${p.img}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
@@ -211,9 +228,9 @@
                 <p class="italic text-sm opacity-70 mb-4">"${t.text}"</p><h4 class="serif font-bold text-iql-brown dark:text-iql-gold">${t.name}</h4>
             </div></div>`).join('');
 
-        // SWIPER INITS
-        new Swiper(".heroSwiper", { loop: true, autoplay: { delay: 4000 }, pagination: { el: ".swiper-pagination", clickable: true } });
-        new Swiper(".productSwiper", { slidesPerView: 1.2, spaceBetween: 20, navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }, breakpoints: { 1024: { slidesPerView: 3.5 } } });
+        // INITIALIZE SWIPERS
+        new Swiper(".heroSwiper", { loop: true, autoplay: { delay: 5000 }, pagination: { el: ".swiper-pagination", clickable: true } });
+        new Swiper(".productSwiper", { slidesPerView: 1.2, spaceBetween: 20, navigation: { nextEl: ".swiper-next-main", prevEl: ".swiper-prev-main" }, breakpoints: { 1024: { slidesPerView: 3.5 } } });
         new Swiper(".accessorySwiper", { slidesPerView: 1.1, spaceBetween: 20, breakpoints: { 1024: { slidesPerView: 2.5 } } });
         new Swiper(".testiSwiper", { slidesPerView: 1, spaceBetween: 20, loop: true, autoplay: { delay: 3500 }, pagination: { el: ".swiper-pagination", clickable: true }, breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } } });
 
@@ -232,6 +249,7 @@
             document.body.style.overflow = 'auto';
         }
 
+        // THEME TOGGLE
         const themeBtn = document.getElementById('theme-toggle');
         const darkIcon = document.getElementById('theme-toggle-dark-icon');
         const lightIcon = document.getElementById('theme-toggle-light-icon');
