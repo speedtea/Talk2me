@@ -8,89 +8,110 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #fcfcfc;
-        }
-        .mix-card:hover img {
-            transform: scale(1.05);
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfcfc; }
+        .mix-card:hover img { transform: scale(1.05); }
+        /* Animasi Modal */
+        #spotifyModal { transition: opacity 0.3s ease; }
+        #spotifyModal.hidden { display: none; opacity: 0; }
+        #spotifyModal.flex { display: flex; opacity: 1; }
     </style>
 </head>
 <body class="text-neutral-800">
 
-    <nav class="p-6 flex justify-between items-center border-b border-neutral-100">
+    <nav class="p-6 flex justify-between items-center border-b border-neutral-100 bg-white sticky top-0 z-10">
         <h1 class="text-xl font-bold tracking-tighter uppercase">Mixes Archive</h1>
         <div class="space-x-6 text-sm font-medium">
-            <a href="#" class="hover:text-neutral-500">Shop</a>
             <a href="#" class="hover:text-neutral-500 underline underline-offset-4">Mixes</a>
-            <a href="#" class="hover:text-neutral-500">Contact</a>
+            <a href="#" class="hover:text-neutral-500 font-bold">Insta</a>
         </div>
     </nav>
 
     <header class="py-16 px-6 text-center bg-[#f3f3f3]">
         <p class="text-xs uppercase tracking-[0.2em] mb-4 text-neutral-500">Curated Soundscapes</p>
-        <h2 class="text-4xl md:text-6xl font-light mb-6">Explore the Mixes</h2>
-        <p class="max-w-xl mx-auto text-neutral-600 leading-relaxed">
-            Kumpulan playlist yang dikurasi untuk menemani setiap suasana hati dan aktivitas Anda. 
-            Klik untuk mendengarkan di Spotify atau YouTube.
-        </p>
+        <h2 class="text-4xl md:text-5xl font-light mb-4">Explore the Mixes</h2>
+        <p class="max-w-md mx-auto text-neutral-600 text-sm leading-relaxed">Klik pada gambar untuk mendengarkan kurasi musik terpilih.</p>
     </header>
 
     <main class="max-w-6xl mx-auto p-8 lg:p-12">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             
-            <div class="mix-card group cursor-pointer">
+            <div class="mix-card group cursor-pointer" onclick="openModal('7ovv8D8HlYmAn1m0m5L03W')">
                 <div class="overflow-hidden rounded-sm bg-neutral-200 aspect-[4/5] mb-4 relative">
-                    <img src="https://images.unsplash.com/photo-1459749411177-042180ce673c?q=80&w=1000" 
-                         alt="Mix 1" class="w-full h-full object-cover transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1459749411177-042180ce673c?q=80&w=1000" class="w-full h-full object-cover transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <i data-lucide="play" class="text-white w-12 h-12 fill-current"></i>
                     </div>
                 </div>
                 <h3 class="font-semibold text-lg uppercase tracking-wide">Midnight Drive</h3>
-                <p class="text-sm text-neutral-500">Lo-fi / Jazz / Chill</p>
+                <p class="text-sm text-neutral-500 font-light">Lo-fi / Jazz / Chill</p>
             </div>
 
-            <div class="mix-card group cursor-pointer">
+            <div class="mix-card group cursor-pointer" onclick="openModal('37i9dQZF1DX4sWSp4Status')">
                 <div class="overflow-hidden rounded-sm bg-neutral-200 aspect-[4/5] mb-4 relative">
-                    <img src="https://images.unsplash.com/photo-1514525253344-f814d0743b17?q=80&w=1000" 
-                         alt="Mix 2" class="w-full h-full object-cover transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1514525253344-f814d0743b17?q=80&w=1000" class="w-full h-full object-cover transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <i data-lucide="play" class="text-white w-12 h-12 fill-current"></i>
                     </div>
                 </div>
                 <h3 class="font-semibold text-lg uppercase tracking-wide">Golden Hour</h3>
-                <p class="text-sm text-neutral-500">Acoustic / Indie / Folk</p>
-            </div>
-
-            <div class="mix-card group cursor-pointer">
-                <div class="overflow-hidden rounded-sm bg-neutral-200 aspect-[4/5] mb-4 relative">
-                    <img src="https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=1000" 
-                         alt="Mix 3" class="w-full h-full object-cover transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <i data-lucide="play" class="text-white w-12 h-12 fill-current"></i>
-                    </div>
-                </div>
-                <h3 class="font-semibold text-lg uppercase tracking-wide">Deep Focus</h3>
-                <p class="text-sm text-neutral-500">Ambient / Techno / Minimal</p>
+                <p class="text-sm text-neutral-500 font-light">Indie / Folk / Acoustic</p>
             </div>
 
         </div>
     </main>
 
-    <footer class="border-t border-neutral-100 py-12 px-6 mt-12 text-center text-xs text-neutral-400 tracking-widest uppercase">
-        <div class="flex justify-center space-x-6 mb-4">
-            <a href="#" class="hover:text-black transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-            <a href="#" class="hover:text-black transition-colors"><i data-lucide="youtube" class="w-5 h-5"></i></a>
-            <a href="#" class="hover:text-black transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+    <div id="spotifyModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm items-center justify-center p-4" onclick="closeModal()">
+        <div class="bg-black w-full max-w-lg rounded-lg overflow-hidden relative shadow-2xl" onclick="event.stopPropagation()">
+            <button onclick="closeModal()" class="absolute -top-12 right-0 text-white hover:text-neutral-300 flex items-center gap-2 text-sm uppercase tracking-widest">
+                Close <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div id="iframeContainer">
+                </div>
         </div>
-        <p>© 2026 Archive. Powered by GitHub Pages.</p>
+    </div>
+
+    <footer class="py-12 text-center text-[10px] text-neutral-400 tracking-[0.3em] uppercase">
+        <p>© 2026 Archive. Built with GitHub Pages.</p>
     </footer>
 
     <script>
-        // Inisialisasi Ikon Lucide
+        // Inisialisasi Ikon
         lucide.createIcons();
+
+        const modal = document.getElementById('spotifyModal');
+        const container = document.getElementById('iframeContainer');
+
+        function openModal(playlistId) {
+            // Masukkan iframe Spotify secara dinamis
+            container.innerHTML = `
+                <iframe 
+                    style="border-radius:12px" 
+                    src="https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator&theme=0" 
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+                </iframe>
+            `;
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Matikan scroll saat modal buka
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            container.innerHTML = ''; // Bersihkan iframe agar musik berhenti
+            document.body.style.overflow = 'auto';
+        }
+
+        // Tutup modal dengan tombol Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
     </script>
 </body>
 </html>
