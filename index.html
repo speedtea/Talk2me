@@ -67,13 +67,18 @@
     </div>
 
     <section id="koleksi" class="py-24 max-w-7xl mx-auto px-6">
-        <h2 class="text-3xl serif italic mb-12">Featured Goods</h2>
+        <h2 class="text-3xl serif italic mb-12">Featured Collection</h2>
         <div class="swiper productSwiper !pb-12">
             <div class="swiper-wrapper" id="featured-list"></div>
         </div>
     </section>
 
-    <section class="pb-24 max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12" id="extra-list"></section>
+    <section class="pb-24 max-w-7xl mx-auto px-6">
+        <h3 class="text-[10px] uppercase tracking-[0.4em] opacity-40 mb-10">Essential Accessories</h3>
+        <div class="swiper accessorySwiper !pb-12">
+            <div class="swiper-wrapper" id="extra-list"></div>
+        </div>
+    </section>
 
     <section class="py-24 bg-white/50 dark:bg-white/5 border-y border-black/5 dark:border-white/5">
         <div class="max-w-7xl mx-auto px-6">
@@ -94,26 +99,11 @@
             <a href="#" class="text-[9px] font-bold uppercase tracking-widest border-b border-black dark:border-white pb-1">Follow Us</a>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-5 gap-2 px-2">
-            <div class="aspect-square overflow-hidden group relative bg-gray-200">
-                <img src="https://images.unsplash.com/photo-1547949003-9792a18a2601?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"><i data-lucide="instagram"></i></div>
-            </div>
-            <div class="aspect-square overflow-hidden group relative bg-gray-200">
-                <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"><i data-lucide="instagram"></i></div>
-            </div>
-            <div class="aspect-square overflow-hidden group relative bg-gray-200 hidden md:block">
-                <img src="https://images.unsplash.com/photo-1530173336844-31533318079a?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"><i data-lucide="instagram"></i></div>
-            </div>
-            <div class="aspect-square overflow-hidden group relative bg-gray-200 hidden md:block">
-                <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"><i data-lucide="instagram"></i></div>
-            </div>
-            <div class="aspect-square overflow-hidden group relative bg-gray-200">
-                <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"><i data-lucide="instagram"></i></div>
-            </div>
+            <div class="aspect-square overflow-hidden bg-gray-200"><img src="https://images.unsplash.com/photo-1547949003-9792a18a2601?q=80&w=400" class="w-full h-full object-cover"></div>
+            <div class="aspect-square overflow-hidden bg-gray-200"><img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=400" class="w-full h-full object-cover"></div>
+            <div class="aspect-square overflow-hidden bg-gray-200 hidden md:block"><img src="https://images.unsplash.com/photo-1530173336844-31533318079a?q=80&w=400" class="w-full h-full object-cover"></div>
+            <div class="aspect-square overflow-hidden bg-gray-200 hidden md:block"><img src="https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=400" class="w-full h-full object-cover"></div>
+            <div class="aspect-square overflow-hidden bg-gray-200"><img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=400" class="w-full h-full object-cover"></div>
         </div>
     </section>
 
@@ -171,6 +161,7 @@
             { name: "Camera Strap", price: "250.000", img: "https://images.unsplash.com/photo-1516724562728-afc824a36e84?q=80&w=800", desc: "Durable leather strap for professional use." }
         ];
 
+        // 4 Produk Utama
         document.getElementById('featured-list').innerHTML = products.slice(0, 4).map(p => `
             <div class="swiper-slide cursor-pointer group" onclick="openModal('${p.name}', '${p.price}', '${p.img}', '${p.desc}')">
                 <div class="relative aspect-[3/4] overflow-hidden rounded-[2rem] bg-gray-200 dark:bg-white/5 shadow-lg group-hover:shadow-2xl transition-all duration-700">
@@ -179,12 +170,15 @@
                 </div>
             </div>`).join('');
 
+        // 2 Produk Aksesoris (Slide ke samping)
         document.getElementById('extra-list').innerHTML = products.slice(4, 6).map(p => `
-            <div class="flex items-center space-x-6 cursor-pointer group" onclick="openModal('${p.name}', '${p.price}', '${p.img}', '${p.desc}')">
-                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-iql-accent group-hover:rotate-12 transition-all duration-500 flex-shrink-0">
-                    <img src="${p.img}" class="w-full h-full object-cover">
+            <div class="swiper-slide cursor-pointer group" onclick="openModal('${p.name}', '${p.price}', '${p.img}', '${p.desc}')">
+                <div class="flex items-center space-x-6">
+                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-iql-accent group-hover:rotate-12 transition-all duration-500 flex-shrink-0">
+                        <img src="${p.img}" class="w-full h-full object-cover">
+                    </div>
+                    <div><h3 class="serif text-xl dark:text-[#f8f1ed]">${p.name}</h3><p class="text-[9px] uppercase tracking-widest opacity-40">IDR ${p.price}</p></div>
                 </div>
-                <div><h3 class="serif text-xl dark:text-[#f8f1ed]">${p.name}</h3><p class="text-[9px] uppercase tracking-widest opacity-40">IDR ${p.price}</p></div>
             </div>`).join('');
 
         const testis = [
@@ -201,6 +195,7 @@
 
         new Swiper(".heroSwiper", { loop: true, autoplay: { delay: 4000 }, pagination: { el: ".swiper-pagination", clickable: true } });
         new Swiper(".productSwiper", { slidesPerView: 1.2, spaceBetween: 20, breakpoints: { 1024: { slidesPerView: 3.5 } } });
+        new Swiper(".accessorySwiper", { slidesPerView: 1.1, spaceBetween: 20, breakpoints: { 1024: { slidesPerView: 2.5 } } });
         new Swiper(".testiSwiper", { slidesPerView: 1, spaceBetween: 20, loop: true, autoplay: { delay: 3500 }, pagination: { el: ".swiper-pagination", clickable: true }, breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } } });
 
         function openModal(name, price, img, desc) {
@@ -235,4 +230,4 @@
         }
     </script>
 </body>
-        </html>
+                </html>
