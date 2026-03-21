@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Aesthetic Mixes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fcfcfc;
+        }
+        .mix-card:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="text-neutral-800">
 
+    <nav class="p-6 flex justify-between items-center border-b border-neutral-100">
+        <h1 class="text-xl font-bold tracking-tighter uppercase">Mixes Archive</h1>
+        <div class="space-x-6 text-sm font-medium">
+            <a href="#" class="hover:text-neutral-500">Shop</a>
+            <a href="#" class="hover:text-neutral-500 underline underline-offset-4">Mixes</a>
+            <a href="#" class="hover:text-neutral-500">Contact</a>
+        </div>
+    </nav>
+
+    <header class="py-16 px-6 text-center bg-[#f3f3f3]">
+        <p class="text-xs uppercase tracking-[0.2em] mb-4 text-neutral-500">Curated Soundscapes</p>
+        <h2 class="text-4xl md:text-6xl font-light mb-6">Explore the Mixes</h2>
+        <p class="max-w-xl mx-auto text-neutral-600 leading-relaxed">
+            Kumpulan playlist yang dikurasi untuk menemani setiap suasana hati dan aktivitas Anda. 
+            Klik untuk mendengarkan di Spotify atau YouTube.
+        </p>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-8 lg:p-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            
+            <div class="mix-card group cursor-pointer">
+                <div class="overflow-hidden rounded-sm bg-neutral-200 aspect-[4/5] mb-4 relative">
+                    <img src="https://images.unsplash.com/photo-1459749411177-042180ce673c?q=80&w=1000" 
+                         alt="Mix 1" class="w-full h-full object-cover transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i data-lucide="play" class="text-white w-12 h-12 fill-current"></i>
+                    </div>
+                </div>
+                <h3 class="font-semibold text-lg uppercase tracking-wide">Midnight Drive</h3>
+                <p class="text-sm text-neutral-500">Lo-fi / Jazz / Chill</p>
+            </div>
+
+            <div class="mix-card group cursor-pointer">
+                <div class="overflow-hidden rounded-sm bg-neutral-200 aspect-[4/5] mb-4 relative">
+                    <img src="https://images.unsplash.com/photo-1514525253344-f814d0743b17?q=80&w=1000" 
+                         alt="Mix 2" class="w-full h-full object-cover transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i data-lucide="play" class="text-white w-12 h-12 fill-current"></i>
+                    </div>
+                </div>
+                <h3 class="font-semibold text-lg uppercase tracking-wide">Golden Hour</h3>
+                <p class="text-sm text-neutral-500">Acoustic / Indie / Folk</p>
+            </div>
+
+            <div class="mix-card group cursor-pointer">
+                <div class="overflow-hidden rounded-sm bg-neutral-200 aspect-[4/5] mb-4 relative">
+                    <img src="https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=1000" 
+                         alt="Mix 3" class="w-full h-full object-cover transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i data-lucide="play" class="text-white w-12 h-12 fill-current"></i>
+                    </div>
+                </div>
+                <h3 class="font-semibold text-lg uppercase tracking-wide">Deep Focus</h3>
+                <p class="text-sm text-neutral-500">Ambient / Techno / Minimal</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="border-t border-neutral-100 py-12 px-6 mt-12 text-center text-xs text-neutral-400 tracking-widest uppercase">
+        <div class="flex justify-center space-x-6 mb-4">
+            <a href="#" class="hover:text-black transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+            <a href="#" class="hover:text-black transition-colors"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+            <a href="#" class="hover:text-black transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+        </div>
+        <p>© 2026 Archive. Powered by GitHub Pages.</p>
+    </footer>
+
+    <script>
+        // Inisialisasi Ikon Lucide
+        lucide.createIcons();
+    </script>
+</body>
+</html>
