@@ -28,39 +28,33 @@
         tailwind.config = { darkMode: 'class' }
     </script>
     <style>
-        /* Warna highlight teks custom */
-::selection {
-    background-color: #000;
-    color: #fff;
-}
-.dark ::selection {
-    background-color: #fff;
-    color: #000;
-}
-
-/* Haluskan pergerakan hover navigasi */
-nav a {
-    transition: all 0.4s ease;
-}
-nav a:hover {
-    letter-spacing: 0.15em;
-    opacity: 0.7;
-}
-
-/* Efek halus pada gambar saat hover */
-.group img {
-    filter: grayscale(100%) brightness(90%);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.group:hover img {
-    filter: grayscale(0%) brightness(100%);
-    transform: scale(1.05);
-}
-        body { font-family: 'Inter', sans-serif; transition: background-color 0.4s; scroll-behavior: smooth; }
+       body { font-family: 'Inter', sans-serif; transition: background-color 0.4s; scroll-behavior: smooth; }
         ::selection { background: #000; color: #fff; }
         .dark ::selection { background: #fff; color: #000; }
         .glass-nav { backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.8); }
         .dark .glass-nav { background-color: rgba(9, 9, 11, 0.8); }
+
+        /* Warna saat teks diblok/sorot */
+::selection {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Warna saat teks diblok pada Dark Mode */
+.dark ::selection {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Memperhalus transisi hover pada link navigasi */
+nav a {
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    opacity: 0.6;
+    letter-spacing: 0.1em;
+}
     </style>
 </head>
 <body class="bg-white text-black dark:bg-zinc-950 dark:text-white antialiased overflow-x-hidden">
