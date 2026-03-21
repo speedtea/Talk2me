@@ -40,15 +40,13 @@
 
     <nav class="flex justify-between items-center px-6 md:px-12 py-6 sticky top-0 z-50 bg-[#fdfaf5]/90 dark:bg-iql-dark/90 backdrop-blur-md border-b border-black/5 dark:border-white/5">
         <a href="#" class="brand-logo text-xl md:text-2xl text-iql-brown dark:text-[#f8f1ed]">IQL</a>
-        <div class="flex items-center space-x-4">
-            <button id="theme-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
-                <i id="theme-toggle-dark-icon" data-lucide="moon" class="hidden w-5 h-5"></i>
-                <i id="theme-toggle-light-icon" data-lucide="sun" class="hidden w-5 h-5 text-yellow-400"></i>
-            </button>
-        </div>
+        <button id="theme-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+            <i id="theme-toggle-dark-icon" data-lucide="moon" class="hidden w-5 h-5"></i>
+            <i id="theme-toggle-light-icon" data-lucide="sun" class="hidden w-5 h-5 text-yellow-400"></i>
+        </button>
     </nav>
 
-    <div class="swiper heroSwiper h-[60vh] md:h-[85vh]">
+    <div class="swiper heroSwiper h-[60vh] md:h-[80vh]">
         <div class="swiper-wrapper">
             <div class="swiper-slide relative">
                 <img src="https://images.unsplash.com/photo-1473187983305-f615310e7daa?q=80&w=2000" class="w-full h-full object-cover brightness-50">
@@ -61,7 +59,7 @@
                 <img src="https://images.unsplash.com/photo-1547949003-9792a18a2601?q=80&w=2000" class="w-full h-full object-cover brightness-50">
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-6">
                     <h2 class="text-5xl md:text-7xl serif italic mb-4 text-iql-gold">Timeless Spirit</h2>
-                    <p class="max-w-md text-sm opacity-80 italic">Exclusive 15% off for our new wallet collection.</p>
+                    <p class="max-w-md text-sm opacity-80 italic">Luxury leather goods for your daily journey.</p>
                 </div>
             </div>
         </div>
@@ -69,7 +67,7 @@
     </div>
 
     <section id="koleksi" class="py-24 max-w-7xl mx-auto px-6">
-        <h2 class="text-3xl serif italic mb-12 text-center md:text-left">Featured Goods</h2>
+        <h2 class="text-3xl serif italic mb-12">Featured Goods</h2>
         <div class="swiper productSwiper !pb-12">
             <div class="swiper-wrapper" id="featured-list"></div>
         </div>
@@ -79,10 +77,42 @@
 
     <section class="py-24 bg-white/50 dark:bg-white/5 border-y border-black/5 dark:border-white/5">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-center text-2xl serif italic mb-16">Kind Words</h2>
+            <h2 class="text-center text-2xl serif italic mb-16 uppercase tracking-widest">Kind Words</h2>
             <div class="swiper testiSwiper !pb-12">
                 <div class="swiper-wrapper" id="testi-list"></div>
                 <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-6 mb-10 flex justify-between items-end">
+            <div>
+                <h2 class="text-2xl serif italic">On Instagram</h2>
+                <p class="text-[9px] uppercase tracking-widest opacity-40">@IQL_LeatherGoods</p>
+            </div>
+            <a href="#" class="text-[9px] font-bold uppercase tracking-widest border-b border-black dark:border-white pb-1">Follow Us</a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-2 px-2">
+            <div class="aspect-square overflow-hidden group relative bg-gray-200">
+                <img src="https://images.unsplash.com/photo-1547949003-9792a18a2601?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"><i data-lucide="instagram"></i></div>
+            </div>
+            <div class="aspect-square overflow-hidden group relative bg-gray-200">
+                <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"><i data-lucide="instagram"></i></div>
+            </div>
+            <div class="aspect-square overflow-hidden group relative bg-gray-200 hidden md:block">
+                <img src="https://images.unsplash.com/photo-1530173336844-31533318079a?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"><i data-lucide="instagram"></i></div>
+            </div>
+            <div class="aspect-square overflow-hidden group relative bg-gray-200 hidden md:block">
+                <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"><i data-lucide="instagram"></i></div>
+            </div>
+            <div class="aspect-square overflow-hidden group relative bg-gray-200">
+                <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"><i data-lucide="instagram"></i></div>
             </div>
         </div>
     </section>
@@ -95,25 +125,25 @@
         </button>
     </div>
 
-    <footer class="pt-24 pb-12 bg-[#fdfaf5] dark:bg-iql-dark">
+    <footer class="pt-24 pb-12 bg-[#fdfaf5] dark:bg-iql-dark border-t border-black/5 dark:border-white/5">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16 text-center md:text-left">
             <div>
-                <div class="brand-logo text-2xl mb-6">IQL</div>
-                <p class="text-xs opacity-50">Artisanal leather goods handcrafted with pride in Indonesia.</p>
+                <div class="brand-logo text-2xl mb-6 text-iql-brown dark:text-[#f8f1ed]">IQL</div>
+                <p class="text-xs opacity-50 font-light">Menciptakan karya kulit artisanal dengan dedikasi tinggi pada detail.</p>
             </div>
             <div>
                 <h5 class="text-[10px] font-bold uppercase tracking-widest mb-6 text-iql-accent">Workshop</h5>
-                <p class="text-xs opacity-50 leading-relaxed">Jl. Adi Sucipto No. 123<br>Surakarta, Jawa Tengah 57144</p>
+                <p class="text-xs opacity-50 leading-relaxed font-light italic">Jl. Adi Sucipto No. 123<br>Surakarta, Jawa Tengah 57144</p>
             </div>
             <div>
-                <h5 class="text-[10px] font-bold uppercase tracking-widest mb-6 text-iql-accent">Social</h5>
+                <h5 class="text-[10px] font-bold uppercase tracking-widest mb-6 text-iql-accent">Connect</h5>
                 <div class="flex justify-center md:justify-start space-x-6 opacity-50">
                     <a href="#"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                    <a href="#"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="https://wa.me/6281234567890"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
                 </div>
             </div>
         </div>
-        <p class="text-center text-[8px] uppercase tracking-[0.5em] opacity-30 mt-20">© 2026 IQL Artisanal</p>
+        <p class="text-center text-[8px] uppercase tracking-[0.5em] opacity-30 mt-20">© 2026 IQL Artisanal Leather Goods</p>
     </footer>
 
     <div id="product-modal" class="fixed inset-0 z-[110] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-md">
@@ -121,9 +151,9 @@
             <button onclick="closeModal()" class="absolute top-6 right-6 z-10 p-2 bg-black/5 dark:bg-white/10 rounded-full"><i data-lucide="x" class="w-5 h-5"></i></button>
             <div class="w-full md:w-1/2 aspect-square"><img id="modal-img" src="" class="w-full h-full object-cover"></div>
             <div class="w-full md:w-1/2 p-10 flex flex-col justify-center">
-                <h2 id="modal-title" class="text-3xl serif italic mb-2"></h2>
+                <h2 id="modal-title" class="text-3xl serif italic mb-2 text-iql-brown dark:text-[#f8f1ed]"></h2>
                 <p id="modal-price" class="text-iql-accent font-bold mb-6"></p>
-                <p id="modal-desc" class="text-sm opacity-70 mb-8 leading-relaxed"></p>
+                <p id="modal-desc" class="text-sm opacity-70 mb-8 leading-relaxed font-light"></p>
                 <a id="modal-wa-link" href="#" target="_blank" class="bg-iql-brown dark:bg-[#f8f1ed] text-white dark:text-iql-dark text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest">Order via WhatsApp</a>
             </div>
         </div>
@@ -133,19 +163,12 @@
     <script>
         lucide.createIcons();
         const products = [
-            { name: "Oxford Tote", price: "1.250.000", img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=800", desc: "Premium handcrafted pull-up leather tote." },
+            { name: "Oxford Tote", price: "1.250.000", img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=800", desc: "Premium handcrafted pull-up leather tote bag." },
             { name: "Slim Wallet", price: "450.000", img: "https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=800", desc: "Minimalist bifold slim leather wallet." },
             { name: "Classic Belt", price: "350.000", img: "https://images.unsplash.com/photo-1530173336844-31533318079a?q=80&w=800", desc: "Vegetable tanned leather belt with brass buckle." },
             { name: "Travel Case", price: "750.000", img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800", desc: "Elegant pouch for your travel essentials." },
             { name: "Card Holder", price: "150.000", img: "https://images.unsplash.com/photo-1614352232749-92c2a9c336b9?q=80&w=800", desc: "Ultra-slim daily card companion." },
             { name: "Camera Strap", price: "250.000", img: "https://images.unsplash.com/photo-1516724562728-afc824a36e84?q=80&w=800", desc: "Durable leather strap for professional use." }
-        ];
-
-        const testis = [
-            { name: "Andini P.", text: "Kualitas kulitnya luar biasa mewah!" },
-            { name: "Budi S.", text: "Oxford Tote-nya sangat fungsional." },
-            { name: "Citra K.", text: "Packaging sangat premium dan rapi." },
-            { name: "Dian S.", text: "Slim wallet terbaik yang pernah saya punya." }
         ];
 
         document.getElementById('featured-list').innerHTML = products.slice(0, 4).map(p => `
@@ -163,6 +186,13 @@
                 </div>
                 <div><h3 class="serif text-xl dark:text-[#f8f1ed]">${p.name}</h3><p class="text-[9px] uppercase tracking-widest opacity-40">IDR ${p.price}</p></div>
             </div>`).join('');
+
+        const testis = [
+            { name: "Andini P.", text: "Kualitas kulitnya luar biasa mewah!" },
+            { name: "Budi S.", text: "Oxford Tote-nya sangat fungsional." },
+            { name: "Citra K.", text: "Packaging sangat premium dan rapi." },
+            { name: "Dian S.", text: "Slim wallet terbaik yang pernah saya punya." }
+        ];
 
         document.getElementById('testi-list').innerHTML = testis.map(t => `
             <div class="swiper-slide px-4"><div class="bg-white dark:bg-[#1a1412] p-8 rounded-[2rem] text-center border border-black/5 dark:border-white/5 shadow-sm">
@@ -205,4 +235,4 @@
         }
     </script>
 </body>
-</html>
+        </html>
