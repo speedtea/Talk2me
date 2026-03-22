@@ -114,8 +114,7 @@
             <p class="text-xs uppercase tracking-widest opacity-50">What they say about IQL</p>
         </div>
         <div class="swiper testimonialSwiper !pb-12">
-            <div class="swiper-wrapper" id="testimonial-list">
-                </div>
+            <div class="swiper-wrapper" id="testimonial-list"></div>
             <div class="swiper-pagination"></div>
         </div>
     </section>
@@ -123,11 +122,13 @@
     <footer class="py-20 bg-white dark:bg-black border-t border-black/5 dark:border-white/5">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="brand-logo text-3xl mb-8 text-iql-brown dark:text-[#f8f1ed]">IQL</div>
+            
             <div class="flex justify-center space-x-8 mb-12">
-                <a href="#" class="hover:text-iql-accent transition-all transform hover:scale-110"><i data-lucide="instagram" class="w-6 h-6"></i></a>
-                <a href="#" class="hover:text-iql-accent transition-all transform hover:scale-110"><i data-lucide="music-2" class="w-6 h-6"></i></a>
-                <a href="#" class="hover:text-iql-accent transition-all transform hover:scale-110"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                <a href="https://www.instagram.com/saka" target="_blank" class="hover:text-iql-accent transition-all transform hover:scale-110"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                <a href="https://www.tiktok.com/@saka" target="_blank" class="hover:text-iql-accent transition-all transform hover:scale-110"><i data-lucide="music-2" class="w-6 h-6"></i></a>
+                <a href="https://www.facebook.com/saka" target="_blank" class="hover:text-iql-accent transition-all transform hover:scale-110"><i data-lucide="facebook" class="w-6 h-6"></i></a>
             </div>
+
             <div class="mb-12">
                 <p class="text-[10px] uppercase tracking-widest opacity-40 mb-6">Secure Payment Methods</p>
                 <div class="flex flex-wrap justify-center gap-8">
@@ -239,7 +240,10 @@
             document.getElementById('modal-price').innerText = 'IDR ' + price;
             document.getElementById('modal-img').src = img;
             document.getElementById('modal-desc').innerText = desc;
+            
+            // UPDATE WHATSAPP LINK (Ubah nomor di bawah ini menjadi nomor asli Anda)
             document.getElementById('modal-wa-link').href = `https://wa.me/6281234567890?text=Halo+IQL,+saya+tertarik+dengan+${name}`;
+            
             document.getElementById('product-modal').classList.replace('hidden', 'flex');
             document.body.style.overflow = 'hidden';
             lucide.createIcons();
@@ -266,4 +270,4 @@
         }
     </script>
 </body>
-                </html>
+    </html>
