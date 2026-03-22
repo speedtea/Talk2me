@@ -37,7 +37,6 @@
         .swiper-pagination-bullet { background: white; opacity: 0.5; }
         .swiper-pagination-bullet-active { background: #8b5e3c; opacity: 1; width: 25px; border-radius: 5px; transition: all 0.3s; }
         
-        /* Fix Logo Pembayaran di Dark Mode */
         .dark .payment-logo { filter: brightness(0) invert(1); opacity: 0.8; }
         .payment-logo { transition: all 0.3s; }
         .payment-logo:hover { opacity: 1; filter: none !important; grayscale: 0; }
@@ -109,16 +108,26 @@
         </div>
     </section>
 
+    <section class="py-24 max-w-7xl mx-auto px-6 border-t border-black/5 dark:border-white/5">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl serif italic mb-4">Client Stories</h2>
+            <p class="text-xs uppercase tracking-widest opacity-50">What they say about IQL</p>
+        </div>
+        <div class="swiper testimonialSwiper !pb-12">
+            <div class="swiper-wrapper" id="testimonial-list">
+                </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
     <footer class="py-20 bg-white dark:bg-black border-t border-black/5 dark:border-white/5">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="brand-logo text-3xl mb-8 text-iql-brown dark:text-[#f8f1ed]">IQL</div>
-            
             <div class="flex justify-center space-x-8 mb-12">
                 <a href="#" class="hover:text-iql-accent transition-all transform hover:scale-110"><i data-lucide="instagram" class="w-6 h-6"></i></a>
                 <a href="#" class="hover:text-iql-accent transition-all transform hover:scale-110"><i data-lucide="music-2" class="w-6 h-6"></i></a>
                 <a href="#" class="hover:text-iql-accent transition-all transform hover:scale-110"><i data-lucide="facebook" class="w-6 h-6"></i></a>
             </div>
-
             <div class="mb-12">
                 <p class="text-[10px] uppercase tracking-widest opacity-40 mb-6">Secure Payment Methods</p>
                 <div class="flex flex-wrap justify-center gap-8">
@@ -128,7 +137,6 @@
                     <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Gopay.svg" alt="GoPay" class="h-5 payment-logo grayscale">
                 </div>
             </div>
-
             <p class="text-[9px] uppercase tracking-[0.6em] opacity-30 mt-10">© 2026 IQL Artisanal Leather Goods</p>
         </div>
     </footer>
@@ -150,7 +158,6 @@
     <script>
         lucide.createIcons();
 
-        // 10 Produk Featured
         const featuredData = [
             { name: "Oxford Tote", price: "1.250.000", img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80", desc: "Tas tote premium berbahan pull-up leather terbaik." },
             { name: "Slim Wallet", price: "450.000", img: "https://images.unsplash.com/photo-1627123424574-724758594e93?q=80", desc: "Dompet ramping minimalis untuk gaya modern." },
@@ -164,7 +171,6 @@
             { name: "Laptop Sleeve", price: "550.000", img: "https://images.unsplash.com/photo-1510511233900-1982d92bd835?q=80", desc: "Pelindung laptop kulit premium." }
         ];
 
-        // 10 Produk More Collection
         const moreData = [
             { name: "Passport Sleeve", price: "300.000", img: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80", desc: "Sampul paspor kulit elegan." },
             { name: "Watch Roll", price: "850.000", img: "https://images.unsplash.com/photo-1522337360788-8b13df772ce1?q=80", desc: "Penyimpan jam tangan mewah." },
@@ -176,6 +182,14 @@
             { name: "Valet Tray", price: "450.000", img: "https://images.unsplash.com/photo-1531956461690-9799299493a7?q=80", desc: "Nampan meja kulit mewah." },
             { name: "Luggage Tag", price: "100.000", img: "https://images.unsplash.com/photo-1553531384-cc64ac80f931?q=80", desc: "Penanda koper kulit asli." },
             { name: "Cord Wrap", price: "75.000", img: "https://images.unsplash.com/photo-1629131726692-1accd0c53ce0?q=80", desc: "Pengikat kabel charger rapi." }
+        ];
+
+        const testimonialData = [
+            { name: "Andi Wijaya", text: "Kualitas kulitnya luar biasa. Sudah pakai setahun tetap awet!", role: "Kolektor Tas" },
+            { name: "Siti Aminah", text: "Pelayanan sangat ramah dan tasnya elegan banget buat ngantor.", role: "Arsitek" },
+            { name: "Budi Santoso", text: "Dompetnya tipis tapi muat banyak. IQL emang juara!", role: "Fotografer" },
+            { name: "Rina Kartika", text: "Puas banget sama Card Holder-nya, jahitan sangat rapi.", role: "Desainer Grafis" },
+            { name: "Eko Prasetyo", text: "Pengiriman cepat dan packing-nya premium. Cocok buat kado.", role: "Wirausaha" }
         ];
 
         function render(id, data) {
@@ -192,12 +206,33 @@
                 </div>`).join('');
         }
 
+        function renderTestimonials() {
+            document.getElementById('testimonial-list').innerHTML = testimonialData.map(t => `
+                <div class="swiper-slide px-4">
+                    <div class="bg-black/5 dark:bg-white/5 p-10 rounded-[2.5rem] text-center h-full flex flex-col justify-center">
+                        <div class="flex justify-center mb-6 text-iql-accent">
+                            <i data-lucide="star" class="fill-current w-4 h-4 mx-0.5"></i>
+                            <i data-lucide="star" class="fill-current w-4 h-4 mx-0.5"></i>
+                            <i data-lucide="star" class="fill-current w-4 h-4 mx-0.5"></i>
+                            <i data-lucide="star" class="fill-current w-4 h-4 mx-0.5"></i>
+                            <i data-lucide="star" class="fill-current w-4 h-4 mx-0.5"></i>
+                        </div>
+                        <p class="serif italic text-xl md:text-2xl mb-8 leading-relaxed">"${t.text}"</p>
+                        <h4 class="font-bold text-sm tracking-widest uppercase mb-1">${t.name}</h4>
+                        <p class="text-[10px] opacity-50 uppercase tracking-widest">${t.role}</p>
+                    </div>
+                </div>`).join('');
+            lucide.createIcons();
+        }
+
         render('featured-list', featuredData);
         render('more-list', moreData);
+        renderTestimonials();
 
         new Swiper(".heroSwiper", { loop: true, autoplay: { delay: 5000 }, pagination: { el: ".swiper-pagination", clickable: true } });
         new Swiper(".featuredSwiper", { slidesPerView: 1.2, spaceBetween: 20, navigation: { nextEl: ".next-f", prevEl: ".prev-f" }, breakpoints: { 1024: { slidesPerView: 3.2 } } });
         new Swiper(".moreSwiper", { slidesPerView: 1.2, spaceBetween: 20, navigation: { nextEl: ".next-m", prevEl: ".prev-m" }, breakpoints: { 1024: { slidesPerView: 3.2 } } });
+        new Swiper(".testimonialSwiper", { slidesPerView: 1, spaceBetween: 30, pagination: { el: ".swiper-pagination", clickable: true }, breakpoints: { 1024: { slidesPerView: 2 } } });
 
         function openModal(name, price, img, desc) {
             document.getElementById('modal-title').innerText = name;
@@ -231,4 +266,4 @@
         }
     </script>
 </body>
-                        </html>
+                </html>
