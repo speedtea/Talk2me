@@ -34,9 +34,13 @@
         .hero-img { image-rendering: -webkit-optimize-contrast; }
         #product-modal.hidden { opacity: 0; pointer-events: none; display: none; }
         #product-modal.flex { opacity: 1; pointer-events: auto; }
-        /* Hero Pagination Style */
         .swiper-pagination-bullet { background: white; opacity: 0.5; }
         .swiper-pagination-bullet-active { background: #8b5e3c; opacity: 1; width: 25px; border-radius: 5px; transition: all 0.3s; }
+        
+        /* Fix Logo Pembayaran di Dark Mode */
+        .dark .payment-logo { filter: brightness(0) invert(1); opacity: 0.8; }
+        .payment-logo { transition: all 0.3s; }
+        .payment-logo:hover { opacity: 1; filter: none !important; grayscale: 0; }
     </style>
 </head>
 <body class="antialiased bg-[#fdfaf5] text-[#1a1412] dark:bg-iql-dark dark:text-[#f8f1ed]">
@@ -54,7 +58,7 @@
             <div class="swiper-slide relative flex items-center justify-center overflow-hidden">
                 <img src="iqbal.jpg" class="hero-img max-w-full max-h-full object-contain brightness-110">
                 <div class="absolute inset-0 flex flex-col items-center justify-end pb-24 text-center text-white px-6 bg-gradient-to-t from-black/80 via-transparent to-transparent">
-                    <h1 class="text-5xl md:text-8xl serif italic mb-3 tracking-tight" style="text-shadow: 0 4px 10px rgba(0,0,0,0.5);">The Visionary</h1>
+                    <h1 class="text-5xl md:text-8xl serif italic mb-3 tracking-tight">The Visionary</h1>
                     <p class="text-[10px] md:text-xs tracking-[0.6em] uppercase opacity-90 font-medium">Crafting Legacy with Soul</p>
                 </div>
             </div>
@@ -64,18 +68,18 @@
                     <span class="bg-iql-accent px-4 py-1 rounded-full text-[10px] uppercase tracking-widest mb-4">Limited Offer</span>
                     <h2 class="text-6xl md:text-9xl serif italic mb-2">50% OFF</h2>
                     <p class="text-lg md:text-2xl font-light tracking-widest mb-8">On Selected Leather Bags</p>
-                    <a href="#koleksi" class="border border-white px-8 py-3 rounded-full text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all">Shop Collection</a>
+                    <a href="#featured-section" class="border border-white px-8 py-3 rounded-full text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all">Shop Collection</a>
                 </div>
             </div>
         </div>
         <div class="swiper-pagination !bottom-8"></div>
     </div>
 
-    <section id="koleksi" class="py-24 max-w-7xl mx-auto px-6">
+    <section id="featured-section" class="py-24 max-w-7xl mx-auto px-6">
         <div class="flex justify-between items-end mb-16">
             <div>
                 <h2 class="text-4xl md:text-5xl serif italic mb-4">Featured Collection</h2>
-                <p class="text-xs uppercase tracking-widest opacity-50">Our Signature Pieces</p>
+                <p class="text-xs uppercase tracking-widest opacity-50">Handcrafted Masterpieces</p>
             </div>
             <div class="hidden md:flex space-x-4">
                 <div class="prev-f p-4 border border-black/20 dark:border-white/20 rounded-full cursor-pointer hover:bg-iql-brown hover:text-white transition-all"><i data-lucide="arrow-left" class="w-5 h-5"></i></div>
@@ -117,11 +121,11 @@
 
             <div class="mb-12">
                 <p class="text-[10px] uppercase tracking-widest opacity-40 mb-6">Secure Payment Methods</p>
-                <div class="flex flex-wrap justify-center gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg" alt="BCA" class="h-5">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Bank_Mandiri_logo_2016.svg" alt="Mandiri" class="h-5">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_danain.png" alt="Dana" class="h-5">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Gopay.svg" alt="GoPay" class="h-5">
+                <div class="flex flex-wrap justify-center gap-8">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg" alt="BCA" class="h-5 payment-logo grayscale">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Bank_Mandiri_logo_2016.svg" alt="Mandiri" class="h-5 payment-logo grayscale">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_danain.png" alt="Dana" class="h-5 payment-logo grayscale">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Gopay.svg" alt="GoPay" class="h-5 payment-logo grayscale">
                 </div>
             </div>
 
@@ -130,16 +134,10 @@
     </footer>
 
     <div id="product-modal" class="fixed inset-0 z-[110] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-md">
-        <div class="bg-[#fdfaf5] dark:bg-[#1a1412] max-w-3xl w-full rounded-[2.5rem] overflow-hidden relative shadow-2xl flex flex-col md:flex-row">
-            
-            <button onclick="closeModal()" class="absolute top-6 right-6 z-50 p-3 bg-black text-white dark:bg-white dark:text-black rounded-full shadow-xl hover:scale-110 transition-transform">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-
-            <div class="w-full md:w-1/2 aspect-square">
-                <img id="modal-img" src="" class="w-full h-full object-cover">
-            </div>
-            <div class="w-full md:w-1/2 p-10 flex flex-col justify-center text-left">
+        <div class="bg-[#fdfaf5] dark:bg-[#1a1412] max-w-3xl w-full rounded-[2.5rem] overflow-hidden relative shadow-2xl flex flex-col md:flex-row text-left">
+            <button onclick="closeModal()" class="absolute top-6 right-6 z-50 p-3 bg-black text-white dark:bg-white dark:text-black rounded-full shadow-xl hover:scale-110 transition-transform"><i data-lucide="x" class="w-6 h-6"></i></button>
+            <div class="w-full md:w-1/2 aspect-square"><img id="modal-img" src="" class="w-full h-full object-cover"></div>
+            <div class="w-full md:w-1/2 p-10 flex flex-col justify-center">
                 <h2 id="modal-title" class="text-3xl serif italic mb-2 text-iql-brown dark:text-[#f8f1ed]"></h2>
                 <p id="modal-price" class="text-iql-accent font-bold mb-6 text-xl"></p>
                 <p id="modal-desc" class="text-sm opacity-70 mb-8 leading-relaxed"></p>
@@ -152,22 +150,35 @@
     <script>
         lucide.createIcons();
 
-        // Data Produk
-        const featuredProducts = [
-            { name: "Oxford Tote", price: "1.250.000", img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80", desc: "Tas tote premium berbahan pull-up leather terbaik untuk mobilitas tinggi." },
-            { name: "Slim Wallet", price: "450.000", img: "https://images.unsplash.com/photo-1627123424574-724758594e93?q=80", desc: "Dompet ramping minimalis yang muat di saku depan Anda." },
-            { name: "Classic Belt", price: "350.000", img: "https://images.unsplash.com/photo-1530173336844-31533318079a?q=80", desc: "Sabuk kulit sapi asli dengan ketahanan seumur hidup." },
-            { name: "Travel Case", price: "750.000", img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80", desc: "Lindungi barang berharga Anda selama perjalanan dengan gaya." }
+        // 10 Produk Featured
+        const featuredData = [
+            { name: "Oxford Tote", price: "1.250.000", img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80", desc: "Tas tote premium berbahan pull-up leather terbaik." },
+            { name: "Slim Wallet", price: "450.000", img: "https://images.unsplash.com/photo-1627123424574-724758594e93?q=80", desc: "Dompet ramping minimalis untuk gaya modern." },
+            { name: "Classic Belt", price: "350.000", img: "https://images.unsplash.com/photo-1530173336844-31533318079a?q=80", desc: "Sabuk kulit sapi asli tahan lama." },
+            { name: "Travel Case", price: "750.000", img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80", desc: "Tempat barang berharga untuk traveling." },
+            { name: "Heritage Satchel", price: "1.550.000", img: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80", desc: "Tas selempang gaya klasik vintage." },
+            { name: "Urban Backpack", price: "2.100.000", img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80", desc: "Ransel kulit mewah untuk kerja." },
+            { name: "Work Briefcase", price: "1.850.000", img: "https://images.unsplash.com/photo-1594223274512-ad4803739b7c?q=80", desc: "Tas kantor profesional elegan." },
+            { name: "Daily Pouch", price: "250.000", img: "https://images.unsplash.com/photo-1566150905458-1bf1fd113f0d?q=80", desc: "Pouch kecil untuk barang harian." },
+            { name: "Weekender Bag", price: "2.500.000", img: "https://images.unsplash.com/photo-1517423738875-5ce310acd3da?q=80", desc: "Tas besar untuk liburan akhir pekan." },
+            { name: "Laptop Sleeve", price: "550.000", img: "https://images.unsplash.com/photo-1510511233900-1982d92bd835?q=80", desc: "Pelindung laptop kulit premium." }
         ];
 
-        const moreProducts = [
-            { name: "Passport Sleeve", price: "300.000", img: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80", desc: "Sampul paspor kulit elegan untuk sang petualang." },
-            { name: "Watch Roll", price: "850.000", img: "https://images.unsplash.com/photo-1522337360788-8b13df772ce1?q=80", desc: "Penyimpan jam tangan mewah yang aman dari goresan." },
-            { name: "Card Holder", price: "150.000", img: "https://images.unsplash.com/photo-1614352232749-92c2a9c336b9?q=80", desc: "Cara simpel membawa kartu identitas dan kartu kredit." },
-            { name: "Camera Strap", price: "400.000", img: "https://images.unsplash.com/photo-1516724562728-afc824a36e84?q=80", desc: "Tali kamera kuat dengan bantalan leher yang nyaman." }
+        // 10 Produk More Collection
+        const moreData = [
+            { name: "Passport Sleeve", price: "300.000", img: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80", desc: "Sampul paspor kulit elegan." },
+            { name: "Watch Roll", price: "850.000", img: "https://images.unsplash.com/photo-1522337360788-8b13df772ce1?q=80", desc: "Penyimpan jam tangan mewah." },
+            { name: "Card Holder", price: "150.000", img: "https://images.unsplash.com/photo-1614352232749-92c2a9c336b9?q=80", desc: "Simpel dan minimalis." },
+            { name: "Camera Strap", price: "400.000", img: "https://images.unsplash.com/photo-1516724562728-afc824a36e84?q=80", desc: "Tali kamera kuat dan nyaman." },
+            { name: "Key Organizer", price: "200.000", img: "https://images.unsplash.com/photo-1582142828630-dc3399b1355b?q=80", desc: "Gantungan kunci rapi." },
+            { name: "Leather Balm", price: "125.000", img: "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80", desc: "Perawatan kulit produk IQL." },
+            { name: "Glasses Case", price: "320.000", img: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?q=80", desc: "Kotak kacamata anti gores." },
+            { name: "Valet Tray", price: "450.000", img: "https://images.unsplash.com/photo-1531956461690-9799299493a7?q=80", desc: "Nampan meja kulit mewah." },
+            { name: "Luggage Tag", price: "100.000", img: "https://images.unsplash.com/photo-1553531384-cc64ac80f931?q=80", desc: "Penanda koper kulit asli." },
+            { name: "Cord Wrap", price: "75.000", img: "https://images.unsplash.com/photo-1629131726692-1accd0c53ce0?q=80", desc: "Pengikat kabel charger rapi." }
         ];
 
-        function renderList(id, data) {
+        function render(id, data) {
             document.getElementById(id).innerHTML = data.map(p => `
                 <div class="swiper-slide cursor-pointer group" onclick="openModal('${p.name}', '${p.price}', '${p.img}', '${p.desc}')">
                     <div class="relative aspect-[3/4] overflow-hidden rounded-[2.5rem] bg-gray-100 dark:bg-white/5 shadow-lg">
@@ -181,31 +192,13 @@
                 </div>`).join('');
         }
 
-        renderList('featured-list', featuredProducts);
-        renderList('more-list', moreProducts);
+        render('featured-list', featuredData);
+        render('more-list', moreData);
 
-        // Hero Swiper
-        new Swiper(".heroSwiper", { 
-            loop: true, 
-            speed: 1000,
-            autoplay: { delay: 5000 },
-            pagination: { el: ".swiper-pagination", clickable: true } 
-        });
+        new Swiper(".heroSwiper", { loop: true, autoplay: { delay: 5000 }, pagination: { el: ".swiper-pagination", clickable: true } });
+        new Swiper(".featuredSwiper", { slidesPerView: 1.2, spaceBetween: 20, navigation: { nextEl: ".next-f", prevEl: ".prev-f" }, breakpoints: { 1024: { slidesPerView: 3.2 } } });
+        new Swiper(".moreSwiper", { slidesPerView: 1.2, spaceBetween: 20, navigation: { nextEl: ".next-m", prevEl: ".prev-m" }, breakpoints: { 1024: { slidesPerView: 3.2 } } });
 
-        // Collection Swipers
-        new Swiper(".featuredSwiper", { 
-            slidesPerView: 1.2, spaceBetween: 20, 
-            navigation: { nextEl: ".next-f", prevEl: ".prev-f" }, 
-            breakpoints: { 1024: { slidesPerView: 3.2 } } 
-        });
-
-        new Swiper(".moreSwiper", { 
-            slidesPerView: 1.2, spaceBetween: 20, 
-            navigation: { nextEl: ".next-m", prevEl: ".prev-m" }, 
-            breakpoints: { 1024: { slidesPerView: 3.2 } } 
-        });
-
-        // Modal Functions
         function openModal(name, price, img, desc) {
             document.getElementById('modal-title').innerText = name;
             document.getElementById('modal-price').innerText = 'IDR ' + price;
@@ -216,17 +209,13 @@
             document.body.style.overflow = 'hidden';
             lucide.createIcons();
         }
-
         function closeModal() {
             document.getElementById('product-modal').classList.replace('flex', 'hidden');
             document.body.style.overflow = 'auto';
         }
-
-        // Theme Toggle
         const themeBtn = document.getElementById('theme-toggle');
         const darkIcon = document.getElementById('theme-toggle-dark-icon');
         const lightIcon = document.getElementById('theme-toggle-light-icon');
-        
         function updateIcons() {
             if (document.documentElement.classList.contains('dark')) {
                 lightIcon.classList.remove('hidden'); darkIcon.classList.add('hidden');
@@ -242,4 +231,4 @@
         }
     </script>
 </body>
-            </html>
+                        </html>
