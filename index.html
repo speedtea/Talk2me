@@ -125,68 +125,65 @@
         <div class="swiper-pagination !bottom-8"></div>
     </div>
 
-    <section id="featured-section" class="py-24 max-w-7xl mx-auto px-6">
-        <div class="flex justify-between items-end mb-16">
-            <div>
-                <h2 class="text-4xl md:text-5xl serif italic mb-4">Featured Collection</h2>
-                <p class="text-xs uppercase tracking-widest opacity-50">Handcrafted Masterpieces</p>
+    <section id="instagram-feed-iql" class="py-24 bg-white dark:bg-black border-t border-black/5 dark:border-white/5 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            
+            <h2 class="text-4xl md:text-6xl serif italic mb-4 text-iql-brown dark:text-[#f8f1ed]">
+                Follow Our Journey
+            </h2>
+            
+            <p class="text-[10px] uppercase tracking-[0.4em] mb-12 italic text-black/50 dark:text-white/70">
+                #iqbalmaulanas_
+            </p>
+            
+            <div class="w-full mx-auto" style="min-height: 400px; max-width: 100%;">
+                <script src="https://elfsightcdn.com/platform.js" async></script>
+                <div class="elfsight-app-cbef7085-0d14-4bdf-b0ee-e34ce8e965cf" data-elfsight-app-lazy></div>
             </div>
-            <div class="hidden md:flex space-x-4">
-                <div class="prev-f p-4 border border-black/20 dark:border-white/20 rounded-full cursor-pointer hover:bg-iql-brown hover:text-white transition-all"><i data-lucide="arrow-left" class="w-5 h-5"></i></div>
-                <div class="next-f p-4 border border-black/20 dark:border-white/20 rounded-full cursor-pointer hover:bg-iql-brown hover:text-white transition-all"><i data-lucide="arrow-right" class="w-5 h-5"></i></div>
-            </div>
-        </div>
-        <div class="swiper featuredSwiper !pb-12">
-            <div class="swiper-wrapper" id="featured-list"></div>
+
         </div>
     </section>
 
-    <section class="py-24 bg-black/5 dark:bg-white/5">
+    <footer class="py-20 bg-white dark:bg-black border-t border-black/5 dark:border-white/5">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-end mb-16">
-                <div>
-                    <h2 class="text-4xl md:text-5xl serif italic mb-4">More Collection</h2>
-                    <p class="text-xs uppercase tracking-widest opacity-50">Essential Accessories</p>
-                </div>
-                <div class="hidden md:flex space-x-4">
-                    <div class="prev-m p-4 border border-black/20 dark:border-white/20 rounded-full cursor-pointer hover:bg-iql-brown hover:text-white transition-all"><i data-lucide="arrow-left" class="w-5 h-5"></i></div>
-                    <div class="next-m p-4 border border-black/20 dark:border-white/20 rounded-full cursor-pointer hover:bg-iql-brown hover:text-white transition-all"><i data-lucide="arrow-right" class="w-5 h-5"></i></div>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="serif italic text-2xl">IQL.</div>
+                <div class="text-[10px] uppercase tracking-[0.2em] opacity-50">
+                    © 2026 IQL Leather Goods. All Rights Reserved.
                 </div>
             </div>
-            <div class="swiper moreSwiper !pb-12">
-                <div class="swiper-wrapper" id="more-list"></div>
-            </div>
         </div>
-    </section>
+    </footer>
 
-    <section class="py-24 max-w-7xl mx-auto px-6 border-t border-black/5 dark:border-white/5">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl serif italic mb-4">Client Stories</h2>
-            <p class="text-xs uppercase tracking-widest opacity-50">What they say about IQL</p>
-        </div>
-        <div class="swiper testimonialSwiper !pb-16">
-            <div class="swiper-wrapper" id="testimonial-list"></div>
-            <div class="swiper-pagination !bottom-0"></div>
-        </div>
-    </section>
+    <style>
+        /* Menghilangkan sela kosong di bawah footer */
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            background-color: #000; /* Warna dasar untuk transisi mode gelap */
+        }
 
-    <section id="instagram-feed-new" class="py-24 bg-white dark:bg-black border-t border-black/5 dark:border-white/5 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-        
-        <h2 class="text-4xl md:text-6xl serif italic mb-4 text-iql-brown dark:text-[#f8f1ed]">
-            Follow Our Journey
-        </h2>
-        
-        <p class="text-[10px] uppercase tracking-[0.4em] opacity-50 mb-12 italic">
-            #IQLLeather
-        </p>
-        
-        <div class="w-full mx-auto" style="min-height: 400px; max-width: 100%;">
-            <script src="https://elfsightcdn.com/platform.js" async></script>
-            <div class="elfsight-app-cbef7085-0d14-4bdf-b0ee-e34ce8e965cf" data-elfsight-app-lazy></div>
-        </div>
+        /* Memastikan footer rapat tanpa margin bawah */
+        footer {
+            margin-bottom: 0 !important;
+        }
 
-    </div>
+        /* Efek hover kartu produk yang lebih halus */
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Fix spasi tambahan dari widget Elfsight */
+        .elfsight-app-cbef7085-0d14-4bdf-b0ee-e34ce8e965cf {
+            margin-bottom: -30px !important;
+        }
+    </style>
 </section>
 
     <footer class="py-20 ...">
