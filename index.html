@@ -34,8 +34,8 @@
         .hero-img { image-rendering: -webkit-optimize-contrast; }
         #product-modal.hidden { opacity: 0; pointer-events: none; display: none; }
         #product-modal.flex { opacity: 1; pointer-events: auto; }
-        .swiper-pagination-bullet { background: white; opacity: 0.5; }
-        .swiper-pagination-bullet-active { background: #8b5e3c; opacity: 1; width: 25px; border-radius: 5px; transition: all 0.3s; }
+        .swiper-pagination-bullet { background: #8b5e3c; opacity: 0.3; }
+        .swiper-pagination-bullet-active { opacity: 1; width: 20px; border-radius: 5px; transition: all 0.3s; }
         
         .dark .payment-logo { filter: brightness(0) invert(1); opacity: 0.8; }
         .payment-logo { transition: all 0.3s; }
@@ -113,22 +113,20 @@
             <h2 class="text-4xl md:text-5xl serif italic mb-4">Client Stories</h2>
             <p class="text-xs uppercase tracking-widest opacity-50">What they say about IQL</p>
         </div>
-        <div class="swiper testimonialSwiper !pb-12">
+        <div class="swiper testimonialSwiper !pb-16">
             <div class="swiper-wrapper" id="testimonial-list"></div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination !bottom-0"></div>
         </div>
     </section>
 
     <footer class="py-20 bg-white dark:bg-black border-t border-black/5 dark:border-white/5">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="brand-logo text-3xl mb-8 text-iql-brown dark:text-[#f8f1ed]">IQL</div>
-            
             <div class="flex justify-center space-x-8 mb-12">
                 <a href="https://www.instagram.com/saka" target="_blank" class="hover:text-iql-accent transition-all transform hover:scale-110"><i data-lucide="instagram" class="w-6 h-6"></i></a>
                 <a href="https://www.tiktok.com/@saka" target="_blank" class="hover:text-iql-accent transition-all transform hover:scale-110"><i data-lucide="music-2" class="w-6 h-6"></i></a>
                 <a href="https://www.facebook.com/saka" target="_blank" class="hover:text-iql-accent transition-all transform hover:scale-110"><i data-lucide="facebook" class="w-6 h-6"></i></a>
             </div>
-
             <div class="mb-12">
                 <p class="text-[10px] uppercase tracking-widest opacity-40 mb-6">Secure Payment Methods</p>
                 <div class="flex flex-wrap justify-center gap-8">
@@ -210,7 +208,7 @@
         function renderTestimonials() {
             document.getElementById('testimonial-list').innerHTML = testimonialData.map(t => `
                 <div class="swiper-slide px-4">
-                    <div class="bg-black/5 dark:bg-white/5 p-10 rounded-[2.5rem] text-center h-full flex flex-col justify-center">
+                    <div class="bg-black/5 dark:bg-white/5 p-12 rounded-[3rem] text-center">
                         <div class="flex justify-center mb-6 text-iql-accent">
                             <i data-lucide="star" class="fill-current w-4 h-4 mx-0.5"></i>
                             <i data-lucide="star" class="fill-current w-4 h-4 mx-0.5"></i>
@@ -233,17 +231,23 @@
         new Swiper(".heroSwiper", { loop: true, autoplay: { delay: 5000 }, pagination: { el: ".swiper-pagination", clickable: true } });
         new Swiper(".featuredSwiper", { slidesPerView: 1.2, spaceBetween: 20, navigation: { nextEl: ".next-f", prevEl: ".prev-f" }, breakpoints: { 1024: { slidesPerView: 3.2 } } });
         new Swiper(".moreSwiper", { slidesPerView: 1.2, spaceBetween: 20, navigation: { nextEl: ".next-m", prevEl: ".prev-m" }, breakpoints: { 1024: { slidesPerView: 3.2 } } });
-        new Swiper(".testimonialSwiper", { slidesPerView: 1, spaceBetween: 30, pagination: { el: ".swiper-pagination", clickable: true }, breakpoints: { 1024: { slidesPerView: 2 } } });
+        
+        // TESTIMONIAL SLIDER CONFIG
+        new Swiper(".testimonialSwiper", { 
+            slidesPerView: 1, 
+            spaceBetween: 30, 
+            loop: true,
+            autoplay: { delay: 4000 },
+            pagination: { el: ".swiper-pagination", clickable: true }, 
+            breakpoints: { 1024: { slidesPerView: 2 } } 
+        });
 
         function openModal(name, price, img, desc) {
             document.getElementById('modal-title').innerText = name;
             document.getElementById('modal-price').innerText = 'IDR ' + price;
             document.getElementById('modal-img').src = img;
             document.getElementById('modal-desc').innerText = desc;
-            
-            // UPDATE WHATSAPP LINK (Ubah nomor di bawah ini menjadi nomor asli Anda)
             document.getElementById('modal-wa-link').href = `https://wa.me/6281234567890?text=Halo+IQL,+saya+tertarik+dengan+${name}`;
-            
             document.getElementById('product-modal').classList.replace('hidden', 'flex');
             document.body.style.overflow = 'hidden';
             lucide.createIcons();
@@ -270,4 +274,4 @@
         }
     </script>
 </body>
-    </html>
+                </html>
