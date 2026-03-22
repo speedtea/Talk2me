@@ -160,7 +160,6 @@
     <script>
         lucide.createIcons();
 
-        // DATA PRODUK DENGAN LINK SHOPEE (Silakan ganti link # dengan link Shopee asli)
         const featuredData = [
             { name: "Oxford Tote", price: "1.250.000", img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80", desc: "Tas tote premium berbahan pull-up leather terbaik.", shopee: "#" },
             { name: "Slim Wallet", price: "450.000", img: "https://images.unsplash.com/photo-1627123424574-724758594e93?q=80", desc: "Dompet ramping minimalis untuk gaya modern.", shopee: "#" },
@@ -243,9 +242,9 @@
             document.getElementById('modal-img').src = img;
             document.getElementById('modal-desc').innerText = desc;
             
-            // UPDATE LINKS
             document.getElementById('modal-shopee-link').href = shopeeLink;
-            document.getElementById('modal-wa-link').href = `https://wa.me/6281234567890?text=Halo+IQL,+saya+tertarik+dengan+${name}`;
+            // UPDATE WHATSAPP NUMBER
+            document.getElementById('modal-wa-link').href = `https://wa.me/6283870088809?text=Halo+IQL,+saya+tertarik+dengan+${name}`;
             
             document.getElementById('product-modal').classList.replace('hidden', 'flex');
             document.body.style.overflow = 'hidden';
@@ -273,4 +272,4 @@
         }
     </script>
 </body>
-                        </html>
+                                                                                                                                                                           </html>
