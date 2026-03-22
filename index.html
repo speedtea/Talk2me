@@ -31,204 +31,133 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; transition: background-color 0.5s, color 0.5s; }
         .serif { font-family: 'Playfair Display', serif; }
         .brand-logo { font-family: 'Playfair Display', serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5em; }
-        .swiper-pagination-bullet-active { background: white !important; width: 20px; border-radius: 4px; }
+        .hero-img { image-rendering: -webkit-optimize-contrast; image-rendering: auto; }
         #product-modal.hidden { opacity: 0; pointer-events: none; display: none; }
         #product-modal.flex { opacity: 1; pointer-events: auto; }
-
-        @keyframes pulse-slow {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.05); }
-        }
-        .animate-pulse-slow {
-            animation: pulse-slow 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
     </style>
 </head>
 <body class="antialiased bg-[#fdfaf5] text-[#1a1412] dark:bg-iql-dark dark:text-[#f8f1ed]">
 
     <nav class="flex justify-between items-center px-6 md:px-12 py-6 sticky top-0 z-50 bg-[#fdfaf5]/90 dark:bg-iql-dark/90 backdrop-blur-md border-b border-black/5 dark:border-white/5">
         <a href="#" class="brand-logo text-xl md:text-2xl text-iql-brown dark:text-[#f8f1ed]">IQL</a>
-        <div class="flex items-center space-x-2">
-            <a href="#" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
-                <i data-lucide="map-pin" class="w-5 h-5"></i>
-            </a>
-            <button id="theme-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
-                <i id="theme-toggle-dark-icon" data-lucide="moon" class="hidden w-5 h-5"></i>
-                <i id="theme-toggle-light-icon" data-lucide="sun" class="hidden w-5 h-5 text-yellow-400"></i>
-            </button>
-        </div>
+        <button id="theme-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+            <i id="theme-toggle-dark-icon" data-lucide="moon" class="hidden w-5 h-5"></i>
+            <i id="theme-toggle-light-icon" data-lucide="sun" class="hidden w-5 h-5 text-yellow-400"></i>
+        </button>
     </nav>
 
-    <div class="swiper heroSwiper h-[70vh] md:h-[85vh]">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide relative bg-black">
-                <img src="iqbal.jpg" 
-                     class="w-full h-full object-cover md:object-cover brightness-90">
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-6 bg-gradient-to-t from-black/80 via-transparent to-transparent">
-                    <h2 class="text-5xl md:text-8xl serif italic mb-4">The Visionary</h2>
-                    <p class="text-[10px] tracking-[0.5em] uppercase opacity-80">Crafting Legacy with Soul</p>
-                </div>
-            </div>
-            <div class="swiper-slide relative">
-                <img src="https://images.unsplash.com/photo-1473187983305-f615310e7daa?q=80&w=2000" class="w-full h-full object-cover brightness-50">
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-6">
-                    <h2 class="text-5xl md:text-8xl serif italic mb-4">The Heritage</h2>
-                    <p class="text-[10px] tracking-[0.5em] uppercase opacity-80">Handcrafted Excellence</p>
-                </div>
-            </div>
+    <div class="h-[80vh] md:h-[90vh] bg-black relative flex items-center justify-center overflow-hidden">
+        <img src="iqbal.jpg" class="hero-img max-w-full max-h-full object-contain brightness-110">
+        <div class="absolute inset-0 flex flex-col items-center justify-end pb-20 text-center text-white px-6 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+            <h1 class="text-5xl md:text-8xl serif italic mb-3 tracking-tight" style="text-shadow: 0 4px 10px rgba(0,0,0,0.8);">The Visionary</h1>
+            <p class="text-[10px] md:text-xs tracking-[0.6em] uppercase opacity-90 font-medium">Crafting Legacy with Soul</p>
         </div>
-        <div class="swiper-pagination"></div>
     </div>
 
-    <section id="koleksi" class="py-24 max-w-7xl mx-auto px-6">
-        <div class="flex justify-between items-end mb-12">
-            <h2 class="text-3xl serif italic">Featured Collection</h2>
-            <div class="hidden md:flex space-x-2">
-                <div class="swiper-prev-main p-3 border border-black/10 dark:border-white/10 rounded-full cursor-pointer hover:bg-iql-brown hover:text-white transition-all"><i data-lucide="chevron-left" class="w-4 h-4"></i></div>
-                <div class="swiper-next-main p-3 border border-black/10 dark:border-white/10 rounded-full cursor-pointer hover:bg-iql-brown hover:text-white transition-all"><i data-lucide="chevron-right" class="w-4 h-4"></i></div>
+    <section class="py-24 max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-end mb-16">
+            <div>
+                <h2 class="text-4xl md:text-5xl serif italic mb-4">Featured Collection</h2>
+                <p class="text-xs uppercase tracking-widest opacity-50">Our Signature Pieces</p>
+            </div>
+            <div class="hidden md:flex space-x-4">
+                <div class="prev-f p-4 border border-black/20 dark:border-white/20 rounded-full cursor-pointer hover:bg-iql-brown hover:text-white transition-all"><i data-lucide="arrow-left" class="w-5 h-5"></i></div>
+                <div class="next-f p-4 border border-black/20 dark:border-white/20 rounded-full cursor-pointer hover:bg-iql-brown hover:text-white transition-all"><i data-lucide="arrow-right" class="w-5 h-5"></i></div>
             </div>
         </div>
-        <div class="swiper productSwiper !pb-12">
+        <div class="swiper featuredSwiper !pb-12">
             <div class="swiper-wrapper" id="featured-list"></div>
         </div>
     </section>
 
-    <section class="pb-24 max-w-7xl mx-auto px-6">
-        <h3 class="text-[10px] uppercase tracking-[0.4em] opacity-40 mb-10 border-l-2 border-iql-accent pl-4 font-bold">Essential Accessories</h3>
-        <div class="swiper accessorySwiper !pb-12">
-            <div class="swiper-wrapper" id="extra-list"></div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-white/50 dark:bg-white/5 border-y border-black/5 dark:border-white/5">
+    <section class="py-24 bg-black/5 dark:bg-white/5">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-center text-2xl serif italic mb-16 uppercase tracking-widest">Kind Words</h2>
-            <div class="swiper testiSwiper !pb-12">
-                <div class="swiper-wrapper" id="testi-list"></div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-6 mb-10 flex justify-between items-end">
-            <div>
-                <h2 class="text-2xl serif italic">On Instagram</h2>
-                <p class="text-[9px] uppercase tracking-widest opacity-40">@IQL_LeatherGoods</p>
-            </div>
-            <a href="#" class="text-[9px] font-bold uppercase tracking-widest border-b border-black dark:border-white pb-1">Follow Us</a>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-2 px-2" id="ig-grid"></div>
-    </section>
-
-    <footer class="pt-24 pb-12 bg-[#fdfaf5] dark:bg-iql-dark border-t border-black/5 dark:border-white/5">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16 text-center md:text-left">
-            <div>
-                <div class="brand-logo text-2xl mb-6 text-iql-brown dark:text-[#f8f1ed]">IQL</div>
-                <p class="text-xs opacity-50 font-light">Menciptakan karya kulit artisanal dengan dedikasi tinggi pada detail.</p>
-            </div>
-            <div>
-                <h5 class="text-[10px] font-bold uppercase tracking-widest mb-6 text-iql-accent">Workshop</h5>
-                <p class="text-xs opacity-50 leading-relaxed font-light italic">Jl. Adi Sucipto No. 123<br>Surakarta, Jawa Tengah 57144</p>
-            </div>
-            <div>
-                <h5 class="text-[10px] font-bold uppercase tracking-widest mb-6 text-iql-accent">Connect</h5>
-                <div class="flex justify-center md:justify-start space-x-6 opacity-50">
-                    <a href="#"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                    <a href="#"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-4xl md:text-5xl serif italic mb-4">More Collection</h2>
+                    <p class="text-xs uppercase tracking-widest opacity-50">Explore More Styles</p>
+                </div>
+                <div class="hidden md:flex space-x-4">
+                    <div class="prev-m p-4 border border-black/20 dark:border-white/20 rounded-full cursor-pointer hover:bg-iql-brown hover:text-white transition-all"><i data-lucide="arrow-left" class="w-5 h-5"></i></div>
+                    <div class="next-m p-4 border border-black/20 dark:border-white/20 rounded-full cursor-pointer hover:bg-iql-brown hover:text-white transition-all"><i data-lucide="arrow-right" class="w-5 h-5"></i></div>
                 </div>
             </div>
+            <div class="swiper moreSwiper !pb-12">
+                <div class="swiper-wrapper" id="more-list"></div>
+            </div>
         </div>
-        <p class="text-center text-[8px] uppercase tracking-[0.5em] opacity-30 mt-20">© 2026 IQL Artisanal Leather Goods</p>
-    </footer>
+    </section>
 
     <div id="product-modal" class="fixed inset-0 z-[110] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-md">
-        <div class="bg-[#fdfaf5] dark:bg-[#1a1412] max-w-2xl w-full rounded-[2.5rem] overflow-hidden relative shadow-2xl flex flex-col md:flex-row border border-white/10">
-            <button onclick="closeModal()" class="absolute top-6 right-6 z-10 p-2 bg-black/5 dark:bg-white/10 rounded-full hover:bg-red-500 hover:text-white transition-all"><i data-lucide="x" class="w-5 h-5"></i></button>
-            <div class="w-full md:w-1/2 aspect-square"><img id="modal-img" src="" class="w-full h-full object-cover"></div>
+        <div class="bg-[#fdfaf5] dark:bg-[#1a1412] max-w-3xl w-full rounded-[2.5rem] overflow-hidden relative shadow-2xl flex flex-col md:flex-row">
+            
+            <button onclick="closeModal()" class="absolute top-6 right-6 z-50 p-3 bg-black text-white dark:bg-white dark:text-black rounded-full shadow-xl hover:scale-110 transition-transform flex items-center justify-center">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div class="w-full md:w-1/2 aspect-square">
+                <img id="modal-img" src="" class="w-full h-full object-cover">
+            </div>
             <div class="w-full md:w-1/2 p-10 flex flex-col justify-center">
                 <h2 id="modal-title" class="text-3xl serif italic mb-2 text-iql-brown dark:text-[#f8f1ed]"></h2>
-                <p id="modal-price" class="text-iql-accent font-bold mb-6"></p>
-                <p id="modal-desc" class="text-sm opacity-70 mb-8 leading-relaxed font-light"></p>
-                <a id="modal-wa-link" href="#" target="_blank" class="bg-iql-brown dark:bg-[#f8f1ed] text-white dark:text-iql-dark text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg transition-transform active:scale-95">Order via WhatsApp</a>
+                <p id="modal-price" class="text-iql-accent font-bold mb-6 text-xl"></p>
+                <p id="modal-desc" class="text-sm opacity-70 mb-8 leading-relaxed"></p>
+                <a id="modal-wa-link" href="#" target="_blank" class="bg-iql-brown dark:bg-[#f8f1ed] text-white dark:text-iql-dark text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:opacity-90 transition-opacity">Order via WhatsApp</a>
             </div>
         </div>
     </div>
 
-    <div class="fixed bottom-8 left-8 z-[100]">
-        <button onclick="document.getElementById('koleksi').scrollIntoView({behavior: 'smooth'})" 
-                class="bg-iql-brown dark:bg-[#f8f1ed] text-white dark:text-iql-dark p-5 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center group">
-            <i data-lucide="shopping-bag" class="w-6 h-6"></i>
-            <span class="max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:ml-3 transition-all duration-500 text-[10px] font-bold uppercase tracking-widest whitespace-nowrap">Shop Collection</span>
-        </button>
-    </div>
+    <footer class="py-20 text-center border-t border-black/5 dark:border-white/5">
+        <div class="brand-logo text-2xl mb-8 text-iql-brown dark:text-[#f8f1ed]">IQL</div>
+        <p class="text-[9px] uppercase tracking-[0.6em] opacity-30">© 2026 IQL Artisanal Leather Goods</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         lucide.createIcons();
 
-        const products = [
-            { name: "Oxford Tote", price: "1.250.000", img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=800", desc: "Premium handcrafted pull-up leather tote bag.", isBestSeller: true },
-            { name: "Slim Wallet", price: "450.000", img: "https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=800", desc: "Minimalist bifold slim leather wallet.", isBestSeller: false },
-            { name: "Classic Belt", price: "350.000", img: "https://images.unsplash.com/photo-1530173336844-31533318079a?q=80&w=800", desc: "Vegetable tanned leather belt with brass buckle.", isBestSeller: true },
-            { name: "Travel Case", price: "750.000", img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800", desc: "Elegant pouch for your travel essentials.", isBestSeller: false },
-            { name: "Duffel Bag", price: "2.100.000", img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=800", desc: "Weekend getaway duffel in grain leather.", isBestSeller: true },
-            { name: "Briefcase", price: "1.850.000", img: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=800", desc: "Professional leather briefcase for laptops.", isBestSeller: false },
-            { name: "Messenger Bag", price: "1.400.000", img: "https://images.unsplash.com/photo-1524498250077-390f9e378fc0?q=80&w=800", desc: "Vintage style cross-body messenger.", isBestSeller: false },
-            { name: "Satchel Bag", price: "1.150.000", img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=800", desc: "Small leather satchel for urban explorers.", isBestSeller: false },
-            { name: "Backpack", price: "1.900.000", img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=800", desc: "Ergonomic leather backpack for daily use.", isBestSeller: true },
-            { name: "Clutch Bag", price: "600.000", img: "https://images.unsplash.com/photo-1566150905458-1bf1fd113f0d?q=80&w=800", desc: "Handheld leather clutch for formal events.", isBestSeller: false }
+        const featuredProducts = [
+            { name: "Oxford Tote", price: "1.250.000", img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80", desc: "Tas tote premium berbahan pull-up leather terbaik." },
+            { name: "Slim Wallet", price: "450.000", img: "https://images.unsplash.com/photo-1627123424574-724758594e93?q=80", desc: "Dompet ramping untuk kartu dan uang kertas." },
+            { name: "Classic Belt", price: "350.000", img: "https://images.unsplash.com/photo-1530173336844-31533318079a?q=80", desc: "Ikat pinggang dengan gesper logam berkualitas tinggi." },
+            { name: "Travel Case", price: "750.000", img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80", desc: "Penyimpan kebutuhan perjalanan Anda dengan rapi." }
         ];
 
-        const accessories = [
-            { name: "Card Holder", price: "150.000", img: "https://images.unsplash.com/photo-1614352232749-92c2a9c336b9?q=80&w=800", desc: "Ultra-slim daily card companion." },
-            { name: "Camera Strap", price: "250.000", img: "https://images.unsplash.com/photo-1516724562728-afc824a36e84?q=80&w=800", desc: "Durable leather strap for professional use." },
-            { name: "Key Loop", price: "95.000", img: "https://images.unsplash.com/photo-1582142839970-2b9e04b60f25?q=80&w=800", desc: "Handy leather loop for your keys." },
-            { name: "Watch Strap", price: "300.000", img: "https://images.unsplash.com/photo-1522337360788-8b13df772ce1?q=80&w=800", desc: "Custom leather watch band." },
-            { name: "Leather Balm", price: "120.000", img: "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=800", desc: "Natural wax for leather maintenance." }
+        const moreProducts = [
+            { name: "Passport Sleeve", price: "300.000", img: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80" },
+            { name: "Watch Roll", price: "850.000", img: "https://images.unsplash.com/photo-1522337360788-8b13df772ce1?q=80" },
+            { name: "Card Holder", price: "150.000", img: "https://images.unsplash.com/photo-1614352232749-92c2a9c336b9?q=80" },
+            { name: "Camera Strap", price: "400.000", img: "https://images.unsplash.com/photo-1516724562728-afc824a36e84?q=80" }
         ];
 
-        document.getElementById('featured-list').innerHTML = products.map(p => `
-            <div class="swiper-slide cursor-pointer group" onclick="openModal('${p.name}', '${p.price}', '${p.img}', '${p.desc}')">
-                <div class="relative aspect-[3/4] overflow-hidden rounded-[2rem] bg-gray-200 dark:bg-white/5 shadow-lg group-hover:shadow-2xl transition-all duration-700">
-                    ${p.isBestSeller ? `<div class="absolute top-5 left-5 z-10 animate-pulse-slow bg-iql-gold text-white text-[8px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg">Best Seller</div>` : ''}
-                    <img src="${p.img}" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000 grayscale-[30%] group-hover:grayscale-0">
-                    <div class="absolute bottom-8 left-8 text-white"><h3 class="serif text-2xl mb-1">${p.name}</h3><p class="text-[10px] tracking-widest uppercase opacity-70">IDR ${p.price}</p></div>
-                </div>
-            </div>`).join('');
-
-        document.getElementById('extra-list').innerHTML = accessories.map(p => `
-            <div class="swiper-slide cursor-pointer group" onclick="openModal('${p.name}', '${p.price}', '${p.img}', '${p.desc}')">
-                <div class="flex items-center space-x-6">
-                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-iql-accent group-hover:rotate-12 transition-all duration-500 flex-shrink-0">
-                        <img src="${p.img}" class="w-full h-full object-cover">
+        function renderProducts(id, data) {
+            document.getElementById(id).innerHTML = data.map(p => `
+                <div class="swiper-slide cursor-pointer group" onclick="openModal('${p.name}', '${p.price}', '${p.img}', '${p.desc || 'Produk buatan tangan dengan kualitas tinggi.'}')">
+                    <div class="relative aspect-[3/4] overflow-hidden rounded-[2.5rem] bg-gray-100 dark:bg-white/5 shadow-lg transition-all duration-700">
+                        <img src="${p.img}" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="absolute bottom-8 left-8 text-white translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                            <h3 class="serif text-2xl mb-1">${p.name}</h3>
+                            <p class="text-[10px] tracking-widest uppercase opacity-70">IDR ${p.price}</p>
+                        </div>
                     </div>
-                    <div><h3 class="serif text-xl dark:text-[#f8f1ed]">${p.name}</h3><p class="text-[9px] uppercase tracking-widest opacity-40 font-bold">IDR ${p.price}</p></div>
-                </div>
-            </div>`).join('');
+                </div>`).join('');
+        }
 
-        document.getElementById('ig-grid').innerHTML = products.slice(0, 5).map(p => `
-            <div class="aspect-square overflow-hidden bg-gray-200 group relative">
-                <img src="${p.img}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white"><i data-lucide="instagram"></i></div>
-            </div>`).join('');
+        renderProducts('featured-list', featuredProducts);
+        renderProducts('more-list', moreProducts);
 
-        const testis = [
-            { name: "Andini P.", text: "Kualitas kulitnya luar biasa mewah!" },
-            { name: "Budi S.", text: "Oxford Tote-nya sangat fungsional." },
-            { name: "Citra K.", text: "Packaging sangat premium dan rapi." },
-            { name: "Dian S.", text: "Slim wallet terbaik yang pernah saya punya." }
-        ];
+        new Swiper(".featuredSwiper", { 
+            slidesPerView: 1.2, spaceBetween: 20, 
+            navigation: { nextEl: ".next-f", prevEl: ".prev-f" }, 
+            breakpoints: { 1024: { slidesPerView: 3.2 } } 
+        });
 
-        document.getElementById('testi-list').innerHTML = testis.map(t => `
-            <div class="swiper-slide px-4"><div class="bg-white dark:bg-[#1a1412] p-8 rounded-[2rem] text-center border border-black/5 dark:border-white/5 shadow-sm">
-                <p class="italic text-sm opacity-70 mb-4">"${t.text}"</p><h4 class="serif font-bold text-iql-brown dark:text-iql-gold">${t.name}</h4>
-            </div></div>`).join('');
-
-        new Swiper(".heroSwiper", { loop: true, autoplay: { delay: 5000 }, pagination: { el: ".swiper-pagination", clickable: true } });
-        new Swiper(".productSwiper", { slidesPerView: 1.2, spaceBetween: 20, navigation: { nextEl: ".swiper-next-main", prevEl: ".swiper-prev-main" }, breakpoints: { 1024: { slidesPerView: 3.5 } } });
-        new Swiper(".accessorySwiper", { slidesPerView: 1.1, spaceBetween: 20, breakpoints: { 1024: { slidesPerView: 2.5 } } });
-        new Swiper(".testiSwiper", { slidesPerView: 1, spaceBetween: 20, loop: true, autoplay: { delay: 3500 }, pagination: { el: ".swiper-pagination", clickable: true }, breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } } });
+        new Swiper(".moreSwiper", { 
+            slidesPerView: 1.2, spaceBetween: 20, 
+            navigation: { nextEl: ".next-m", prevEl: ".prev-m" }, 
+            breakpoints: { 1024: { slidesPerView: 3.2 } } 
+        });
 
         function openModal(name, price, img, desc) {
             document.getElementById('modal-title').innerText = name;
@@ -240,6 +169,7 @@
             document.body.style.overflow = 'hidden';
             lucide.createIcons();
         }
+
         function closeModal() {
             document.getElementById('product-modal').classList.replace('flex', 'hidden');
             document.body.style.overflow = 'auto';
@@ -248,6 +178,7 @@
         const themeBtn = document.getElementById('theme-toggle');
         const darkIcon = document.getElementById('theme-toggle-dark-icon');
         const lightIcon = document.getElementById('theme-toggle-light-icon');
+        
         function updateIcons() {
             if (document.documentElement.classList.contains('dark')) {
                 lightIcon.classList.remove('hidden'); darkIcon.classList.add('hidden');
@@ -263,4 +194,4 @@
         }
     </script>
 </body>
-                    </html>
+                                                                                                                                                                                                                       </html>
