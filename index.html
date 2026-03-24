@@ -389,49 +389,49 @@ function startCountdown() {
         }
     }, 1000);
 }
-// Memaksa halaman kembali ke atas saat refresh
+<script>
+// 1. Logika Scroll Restoration
 if (history.scrollRestoration) {
     history.scrollRestoration = 'manual';
 }
 
-window.addEventListener('beforeunload', () => {
-    window.scrollTo(0, 0);
-});
-
-// Tambahan untuk memastikan saat halaman baru terbuka langsung ke atas
-window.scrollTo(0, 0);
+// 2. Definisi Fungsi & Event saat Load
 window.onload = () => {
+    window.scrollTo(0, 0); // Memaksa ke atas saat refresh
     fetchProductsFromSheets();
     startCountdown();
-    new Swiper(".heroSwiper", { autoplay: { delay: 5000 }, pagination: { el: ".swiper-pagination", clickable: true }, loop: true });
+    new Swiper(".heroSwiper", { 
+        autoplay: { delay: 5000 }, 
+        pagination: { el: ".swiper-pagination", clickable: true }, 
+        loop: true 
+    });
 };
-  const backToTopBtn = document.getElementById('backToTop');
 
-// Munculkan tombol saat scroll melebihi 400px
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-        backToTopBtn.classList.remove('opacity-0', 'invisible');
-        backToTopBtn.classList.add('opacity-100', 'visible');
-    } else {
-        backToTopBtn.classList.add('opacity-0', 'invisible');
-        backToTopBtn.classList.remove('opacity-100', 'visible');
-    }
-});
+// 3. Logika Back to Top (Pastikan variabel di dalam/setelah DOM siap)
+document.addEventListener('DOMContentLoaded', () => {
+    const backToTopBtn = document.getElementById('backToTop');
 
-// Fungsi Scroll ke Atas saat diklik
-backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // Efek scroll halus
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            backToTopBtn.classList.remove('opacity-0', 'invisible');
+            backToTopBtn.classList.add('opacity-100', 'visible', 'translate-y-0');
+        } else {
+            backToTopBtn.classList.add('opacity-0', 'invisible');
+            backToTopBtn.classList.remove('opacity-100', 'visible');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
-    <button id="backToTop" class="fixed bottom-24 right-6 bg-orange-500 text-white p-3 rounded-full shadow-2xl opacity-0 invisible transition-all duration-300 z-50 hover:bg-orange-600 hover:scale-110">
+</script>
+
+<button id="backToTop" class="fixed bottom-24 right-6 bg-orange-500 text-white p-3 rounded-full shadow-2xl opacity-0 invisible transition-all duration-300 z-50 hover:bg-orange-600 hover:scale-110 transform">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 15l7-7 7 7" />
     </svg>
 </button>
-    
-</script>
 
 </body>
 </html>
