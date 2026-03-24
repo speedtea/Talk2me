@@ -11,6 +11,30 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
+        /* Mencegah kebocoran layar ke samping */
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Memastikan semua container tetap di tengah dan tidak melar */
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Khusus untuk tampilan desktop sungguhan agar tidak terlalu lebar */
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1200px;
+    }
+}
         body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; scroll-behavior: smooth; color: #1f2937; }
         .bg-amazon-dark { background-color: #131921; }
         .amazon-orange { background-color: #febd69; }
